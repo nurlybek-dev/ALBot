@@ -1,0 +1,1500 @@
+/home/nurlybek/ALBot/node_modules/socket.io-client/dist/socket.io.min.js
+checking Login
+Logged in
+Starting characters
+WebGL Mode
+WebGL Mode
+WebGL Mode
+Connecting to the server.
+Connecting to the server.
+WebGL Mode
+Connecting to the server.
+Connecting to the server.
+Welcome to Americas I
+Welcome to Americas I
+Welcome to Americas I
+Welcome to Americas I
+Connecting ...
+log_in: 6226349625180160 code_slot: 4700118601695232
+Connecting ...
+log_in: 6226349625180160 code_slot: 4630861750730752
+Connecting ...
+log_in: 6226349625180160 code_slot: 6588404999913472
+Connecting ...
+log_in: 6226349625180160 code_slot: 6624509736517632
+start: Chantme code: 6624509736517632
+Connected!
+Note: Game dynamics and drops aren't final, they are evolving with every update gray
+game instance constructed
+start: FunStrike code: 4700118601695232
+Connected!
+Note: Game dynamics and drops aren't final, they are evolving with every update gray
+Connected!
+Note: Game dynamics and drops aren't final, they are evolving with every update gray
+game instance constructed
+start: FunWarIAm code: 6588404999913472
+Connected!
+Note: Game dynamics and drops aren't final, they are evolving with every update gray
+game instance constructed
+game instance constructed
+Shepart: Moving to spot
+smart_move: cave 1201 -782
+Shepart: Searching for a path... #89D4A2
+Chantme: Restoring Party
+Chantme: Using Merchants Luck Skill
+Chantme: Not in main
+smart_move: main 0 0
+Chantme: Searching for a path... #89D4A2
+FunWarIAm joined the party #703987
+FunStrike joined the party #703987
+FunWarIAm joined the party #703987
+Shepart: Path found! #C882D1
+Invited FunWarIAm to party gray
+Invited FunStrike to party gray
+Invited Shepart to party gray
+FunStrike joined the party #703987
+FunWarIAm joined the party #703987
+Shepart joined the party #703987
+Shepart joined the party #703987
+Shepart joined the party #703987
+Shepart joined the party #703987
+FunWarIAm killed a Bat gray
+FunWarIAm killed a Bat gray
+FunWarIAm killed a Bat gray
+FunWarIAm: Used taunt
+192 gold gold
+192 gold gold
+FunWarIAm killed a Bat gray
+192 gold gold
+FunWarIAm killed a Bat gray
+FunWarIAm killed a Bat gray
+FunWarIAm killed a Bat gray
+FunWarIAm killed a Bat gray
+189 gold gold
+189 gold gold
+189 gold gold
+FunStrike: Used Hunters Mark
+FunStrike: Used Supershot
+FunWarIAm: Used taunt
+promise rejected: 
+ {
+  response: 'cooldown',
+  skill: 'attack',
+  place: 'attack',
+  id: '3197052',
+  ms: 934,
+  failed: true,
+  reason: 'cooldown'
+}
+FunStrike: Used Hunters Mark
+FunWarIAm killed a Bat gray
+FunWarIAm: Used taunt
+FunWarIAm killed a Bat gray
+FunWarIAm killed a Bat gray
+341 gold gold
+341 gold gold
+341 gold gold
+FunWarIAm killed a Bat gray
+promise rejected: 
+ {
+  response: 'cooldown',
+  skill: 'attack',
+  place: 'attack',
+  id: '3198087',
+  ms: 897,
+  failed: true,
+  reason: 'cooldown'
+}
+FunWarIAm: Used taunt
+FunWarIAm killed a Bat gray
+FunWarIAm killed a Bat gray
+FunWarIAm killed a Bat gray
+203 gold gold
+203 gold gold
+203 gold gold
+FunStrike: Used Hunters Mark
+FunWarIAm killed a Bat gray
+FunStrike: Used Supershot
+FunWarIAm killed a Bat gray
+promise rejected: 
+ { reason: 'not_there', failed: true }
+FunWarIAm killed a Bat gray
+FunWarIAm killed a Bat gray
+FunWarIAm: Used taunt
+FunWarIAm killed a Bat gray
+379 gold gold
+379 gold gold
+379 gold gold
+FunWarIAm killed a Bat gray
+FunWarIAm killed a Bat gray
+FunWarIAm killed a Bat gray
+FunWarIAm killed a Bat gray
+218 gold gold
+218 gold gold
+218 gold gold
+FunWarIAm: Used taunt
+FunStrike killed a Bat gray
+FunStrike killed a Bat gray
+FunStrike killed a Bat gray
+FunWarIAm: Used taunt
+150 gold gold
+150 gold gold
+150 gold gold
+FunStrike killed a Bat gray
+FunStrike killed a Bat gray
+FunStrike killed a Bat gray
+FunWarIAm: Used taunt
+FunStrike killed a Bat gray
+FunStrike killed a Bat gray
+159 gold gold
+159 gold gold
+159 gold gold
+Shepart killed a Bat gray
+Shepart killed a Bat gray
+Shepart killed a Bat gray
+Shepart killed a Bat gray
+210 gold gold
+210 gold gold
+210 gold gold
+promise rejected: 
+ {
+  response: 'cooldown',
+  skill: 'attack',
+  place: 'attack',
+  id: '3201147',
+  ms: 929,
+  failed: true,
+  reason: 'cooldown'
+}
+promise rejected: 
+ {
+  response: 'not_ready',
+  place: 'equip',
+  failed: true,
+  reason: 'not_ready'
+}
+promise rejected: 
+ {
+  response: 'not_ready',
+  place: 'equip',
+  failed: true,
+  reason: 'not_ready'
+}
+promise rejected: 
+ {
+  response: 'cooldown',
+  skill: 'attack',
+  place: 'attack',
+  id: '3201147',
+  ms: 1000,
+  failed: true,
+  reason: 'cooldown'
+}
+promise rejected: 
+ {
+  response: 'not_ready',
+  place: 'equip',
+  failed: true,
+  reason: 'not_ready'
+}
+Not logged in.
+Not logged in.
+Not logged in.
+Not logged in.
+FunStrike killed a Bat gray
+promise rejected: 
+ { reason: 'not_there', failed: true }
+FunStrike killed a Bat gray
+FunStrike killed a Bat gray
+FunStrike killed a Bat gray
+249 gold gold
+249 gold gold
+249 gold gold
+FunWarIAm: Used taunt
+FunWarIAm killed a Bat gray
+FunWarIAm killed a Bat gray
+FunWarIAm killed a Bat gray
+FunWarIAm: Used taunt
+175 gold gold
+175 gold gold
+175 gold gold
+FunWarIAm killed a Bat gray
+promise rejected: 
+ {
+  response: 'cooldown',
+  skill: 'attack',
+  place: 'attack',
+  id: '3200916',
+  ms: 955,
+  failed: true,
+  reason: 'cooldown'
+}
+FunStrike killed a Bat gray
+FunStrike killed a Bat gray
+FunStrike killed a Bat gray
+FunStrike killed a Bat gray
+FunWarIAm: Used taunt
+203 gold gold
+203 gold gold
+203 gold gold
+FunWarIAm: Used taunt
+Shepart killed a Bat gray
+promise rejected: 
+ { reason: 'not_there', failed: true }
+Shepart killed a Bat gray
+Shepart killed a Bat gray
+Shepart killed a Bat gray
+203 gold gold
+203 gold gold
+203 gold gold
+FunStrike killed a Bat gray
+FunStrike killed a Bat gray
+FunStrike killed a Bat gray
+160 gold gold
+FunStrike killed a Bat gray
+160 gold gold
+160 gold gold
+FunWarIAm killed a Bat gray
+FunWarIAm killed a Bat gray
+FunWarIAm killed a Bat gray
+FunWarIAm killed a Bat gray
+FunWarIAm: Used taunt
+917 gold gold
+917 gold gold
+917 gold gold
+FunStrike killed a Bat gray
+FunStrike killed a Bat gray
+FunStrike killed a Bat gray
+FunStrike killed a Bat gray
+FunWarIAm: Used taunt
+177 gold gold
+177 gold gold
+177 gold gold
+FunWarIAm killed a Bat gray
+FunWarIAm killed a Bat gray
+FunWarIAm killed a Bat gray
+FunWarIAm: Used taunt
+FunWarIAm killed a Bat gray
+192 gold gold
+192 gold gold
+192 gold gold
+FunStrike killed a Bat gray
+FunStrike killed a Bat gray
+FunStrike killed a Bat gray
+FunStrike killed a Bat gray
+FunWarIAm: Used taunt
+207 gold gold
+207 gold gold
+207 gold gold
+FunWarIAm killed a Bat gray
+FunWarIAm killed a Bat gray
+FunWarIAm killed a Bat gray
+FunWarIAm killed a Bat gray
+FunWarIAm: Used taunt
+169 gold gold
+169 gold gold
+169 gold gold
+Not logged in.
+Not logged in.
+Not logged in.
+promise rejected: 
+ {
+  response: 'cooldown',
+  skill: 'attack',
+  place: 'attack',
+  id: '3201888',
+  ms: 936,
+  failed: true,
+  reason: 'cooldown'
+}
+Shepart killed a Bat gray
+Shepart killed a Bat gray
+Shepart killed a Bat gray
+FunWarIAm: Used taunt
+190 gold gold
+190 gold gold
+190 gold gold
+Shepart killed a Bat gray
+Not logged in.
+promise rejected: 
+ {
+  response: 'not_ready',
+  place: 'equip',
+  failed: true,
+  reason: 'not_ready'
+}
+FunWarIAm killed a Bat gray
+FunWarIAm killed a Bat gray
+FunWarIAm killed a Bat gray
+165 gold gold
+165 gold gold
+165 gold gold
+FunWarIAm killed a Bat gray
+FunStrike killed a Bat gray
+FunStrike killed a Bat gray
+FunStrike killed a Bat gray
+Shepart found an Amulet of HP #4BAEAA
+198 gold gold
+Shepart found an Amulet of HP #4BAEAA
+198 gold gold
+Shepart found an Amulet of HP #4BAEAA
+198 gold gold
+FunStrike killed a Bat gray
+Shepart found an Amulet of HP #4BAEAA
+promise rejected: 
+ {
+  response: 'cooldown',
+  skill: 'attack',
+  place: 'attack',
+  id: '3202634',
+  ms: 739,
+  failed: true,
+  reason: 'cooldown'
+}
+promise rejected: 
+ {
+  response: 'cooldown',
+  skill: 'attack',
+  place: 'attack',
+  id: '3202634',
+  ms: 755,
+  failed: true,
+  reason: 'cooldown'
+}
+FunWarIAm killed a Bat gray
+promise rejected: 
+ {
+  response: 'cooldown',
+  skill: 'attack',
+  place: 'attack',
+  id: '3202634',
+  ms: 1205,
+  failed: true,
+  reason: 'cooldown'
+}
+FunWarIAm killed a Bat gray
+1,065 gold gold
+FunWarIAm killed a Bat gray
+FunWarIAm killed a Bat gray
+1,065 gold gold
+promise rejected: 
+ {
+  response: 'cooldown',
+  skill: 'attack',
+  place: 'attack',
+  id: '3202634',
+  ms: 708,
+  failed: true,
+  reason: 'cooldown'
+}
+1,065 gold gold
+FunWarIAm: Used taunt
+FunWarIAm killed a Bat gray
+FunWarIAm killed a Bat gray
+FunWarIAm: Used taunt
+FunWarIAm killed a Bat gray
+promise rejected: 
+ {
+  response: 'cooldown',
+  skill: 'attack',
+  place: 'attack',
+  id: '3202738',
+  ms: 635,
+  failed: true,
+  reason: 'cooldown'
+}
+FunWarIAm killed a Bat gray
+211 gold gold
+211 gold gold
+211 gold gold
+promise rejected: 
+ {
+  response: 'cooldown',
+  skill: 'attack',
+  place: 'attack',
+  id: '3202100',
+  ms: 1184,
+  failed: true,
+  reason: 'cooldown'
+}
+FunStrike killed a Bat gray
+FunStrike killed a Bat gray
+FunStrike killed a Bat gray
+Shepart found a Ring of Small Joys #4BAEAA
+202 gold gold
+Shepart found a Ring of Small Joys #4BAEAA
+202 gold gold
+FunStrike killed a Bat gray
+Shepart found a Ring of Small Joys #4BAEAA
+Shepart found a Ring of Small Joys #4BAEAA
+202 gold gold
+promise rejected: 
+ {
+  response: 'cooldown',
+  skill: 'attack',
+  place: 'attack',
+  id: '3201008',
+  ms: 652,
+  failed: true,
+  reason: 'cooldown'
+}
+FunWarIAm killed a Bat gray
+FunWarIAm killed a Bat gray
+FunWarIAm killed a Bat gray
+FunWarIAm killed a Bat gray
+FunWarIAm: Used taunt
+192 gold gold
+192 gold gold
+192 gold gold
+promise rejected: 
+ {
+  response: 'cooldown',
+  skill: 'attack',
+  place: 'attack',
+  id: '3202208',
+  ms: 975,
+  failed: true,
+  reason: 'cooldown'
+}
+FunWarIAm killed a Bat gray
+FunWarIAm killed a Bat gray
+promise rejected: 
+ { reason: 'not_there', failed: true }
+FunWarIAm killed a Bat gray
+FunWarIAm killed a Bat gray
+1,160 gold gold
+1,160 gold gold
+1,160 gold gold
+FunStrike killed a Bat gray
+FunStrike killed a Bat gray
+FunStrike killed a Bat gray
+148 gold gold
+148 gold gold
+FunStrike killed a Bat gray
+148 gold gold
+promise rejected: 
+ {
+  response: 'not_ready',
+  place: 'equip',
+  failed: true,
+  reason: 'not_ready'
+}
+promise rejected: 
+ {
+  response: 'not_ready',
+  place: 'equip',
+  failed: true,
+  reason: 'not_ready'
+}
+FunStrike killed a Bat gray
+promise rejected: 
+ { reason: 'not_there', failed: true }
+FunStrike killed a Bat gray
+FunStrike killed a Bat gray
+FunWarIAm: Used taunt
+209 gold gold
+209 gold gold
+209 gold gold
+FunStrike killed a Bat gray
+Not logged in.
+Not logged in.
+FunWarIAm killed a Bat gray
+promise rejected: 
+ { reason: 'not_there', failed: true }
+FunWarIAm killed a Bat gray
+FunWarIAm killed a Bat gray
+FunWarIAm: Used taunt
+Not logged in.
+163 gold gold
+163 gold gold
+163 gold gold
+FunWarIAm killed a Bat gray
+Not logged in.
+promise rejected: 
+ {
+  response: 'cooldown',
+  skill: 'attack',
+  place: 'attack',
+  id: '3203320',
+  ms: 1181,
+  failed: true,
+  reason: 'cooldown'
+}
+FunStrike killed a Bat gray
+FunStrike killed a Bat gray
+FunStrike killed a Bat gray
+FunStrike killed a Bat gray
+206 gold gold
+206 gold gold
+206 gold gold
+FunWarIAm killed a Bat gray
+FunWarIAm killed a Bat gray
+FunWarIAm killed a Bat gray
+FunWarIAm killed a Bat gray
+184 gold gold
+184 gold gold
+184 gold gold
+FunWarIAm: Used taunt
+FunWarIAm: Used taunt
+promise rejected: 
+ {
+  response: 'cooldown',
+  skill: 'taunt',
+  place: 'taunt',
+  id: '3203028',
+  ms: 2745,
+  failed: true,
+  reason: 'cooldown'
+}
+promise rejected: 
+ {
+  response: 'cooldown',
+  skill: 'attack',
+  place: 'attack',
+  id: '3203028',
+  ms: 1206,
+  failed: true,
+  reason: 'cooldown'
+}
+Shepart killed a Bat gray
+Shepart killed a Bat gray
+Shepart killed a Bat gray
+FunWarIAm: Used taunt
+144 gold gold
+144 gold gold
+144 gold gold
+Shepart killed a Bat gray
+promise rejected: 
+ {
+  response: 'cooldown',
+  skill: 'attack',
+  place: 'attack',
+  id: '3202316',
+  ms: 754,
+  failed: true,
+  reason: 'cooldown'
+}
+promise rejected: 
+ {
+  response: 'cooldown',
+  skill: 'attack',
+  place: 'attack',
+  id: '3202316',
+  ms: 1167,
+  failed: true,
+  reason: 'cooldown'
+}
+FunWarIAm killed a Bat gray
+FunWarIAm killed a Bat gray
+FunWarIAm: Used taunt
+FunWarIAm killed a Bat gray
+173 gold gold
+FunWarIAm killed a Bat gray
+173 gold gold
+173 gold gold
+FunWarIAm killed a Bat gray
+FunWarIAm killed a Bat gray
+FunWarIAm killed a Bat gray
+FunWarIAm killed a Bat gray
+FunWarIAm: Used taunt
+208 gold gold
+208 gold gold
+208 gold gold
+promise rejected: 
+ {
+  response: 'cooldown',
+  skill: 'attack',
+  place: 'attack',
+  id: '3202428',
+  ms: 672,
+  failed: true,
+  reason: 'cooldown'
+}
+promise rejected: 
+ {
+  response: 'cooldown',
+  skill: 'attack',
+  place: 'attack',
+  id: '3202428',
+  ms: 981,
+  failed: true,
+  reason: 'cooldown'
+}
+FunWarIAm killed a Bat gray
+FunWarIAm killed a Bat gray
+FunWarIAm killed a Bat gray
+FunWarIAm: Used taunt
+211 gold gold
+211 gold gold
+211 gold gold
+FunWarIAm killed a Bat gray
+FunWarIAm killed a Bat gray
+FunWarIAm killed a Bat gray
+FunWarIAm killed a Bat gray
+FunWarIAm killed a Bat gray
+189 gold gold
+189 gold gold
+189 gold gold
+promise rejected: 
+ {
+  response: 'cooldown',
+  skill: 'attack',
+  place: 'attack',
+  id: '3203756',
+  ms: 976,
+  failed: true,
+  reason: 'cooldown'
+}
+promise rejected: 
+ {
+  response: 'cooldown',
+  skill: 'attack',
+  place: 'attack',
+  id: '3203756',
+  ms: 941,
+  failed: true,
+  reason: 'cooldown'
+}
+promise rejected: 
+ {
+  response: 'cooldown',
+  skill: 'attack',
+  place: 'attack',
+  id: '3203756',
+  ms: 677,
+  failed: true,
+  reason: 'cooldown'
+}
+promise rejected: 
+ {
+  response: 'cooldown',
+  skill: 'attack',
+  place: 'attack',
+  id: '3203756',
+  ms: 1020,
+  failed: true,
+  reason: 'cooldown'
+}
+FunStrike killed a Bat gray
+FunStrike killed a Bat gray
+FunStrike killed a Bat gray
+200 gold gold
+200 gold gold
+200 gold gold
+FunStrike killed a Bat gray
+promise rejected: 
+ {
+  response: 'cooldown',
+  skill: 'attack',
+  place: 'attack',
+  id: '3203902',
+  ms: 889,
+  failed: true,
+  reason: 'cooldown'
+}
+FunWarIAm: Used taunt
+promise rejected: 
+ {
+  response: 'cooldown',
+  skill: 'attack',
+  place: 'attack',
+  id: '3203902',
+  ms: 1204,
+  failed: true,
+  reason: 'cooldown'
+}
+FunStrike killed a Bat gray
+FunStrike killed a Bat gray
+FunStrike killed a Bat gray
+FunStrike killed a Bat gray
+FunWarIAm: Used taunt
+160 gold gold
+160 gold gold
+160 gold gold
+FunWarIAm killed a Bat gray
+FunWarIAm killed a Bat gray
+FunWarIAm killed a Bat gray
+FunWarIAm: Used taunt
+1,216 gold gold
+FunWarIAm killed a Bat gray
+1,216 gold gold
+1,216 gold gold
+Not logged in.
+Not logged in.
+Chantme: Path found! #C882D1
+Not logged in.
+Not logged in.
+FunStrike killed a Bat gray
+FunStrike killed a Bat gray
+FunStrike killed a Bat gray
+FunStrike killed a Bat gray
+FunWarIAm: Used taunt
+191 gold gold
+191 gold gold
+191 gold gold
+FunWarIAm killed a Bat gray
+FunWarIAm killed a Bat gray
+FunWarIAm killed a Bat gray
+promise rejected: 
+ { reason: 'not_there', failed: true }
+FunWarIAm killed a Bat gray
+FunWarIAm: Used taunt
+186 gold gold
+186 gold gold
+186 gold gold
+FunWarIAm killed a Bat gray
+FunWarIAm killed a Bat gray
+FunWarIAm killed a Bat gray
+FunWarIAm killed a Bat gray
+FunWarIAm: Used taunt
+207 gold gold
+207 gold gold
+207 gold gold
+Chantme: Restoring Party
+Chantme: Using Merchants Luck Skill
+Chantme: In main
+Chantme: Selling Trash
+Chantme: Merchant is unloading trash hpamulet
+Chantme: Merchant is unloading trash hpbelt
+Chantme: Merchant is unloading trash hpbelt
+Chantme: Merchant is unloading trash hpamulet
+Chantme: Merchant is unloading trash hpbelt
+Chantme: Upgrading Items
+Chantme: Checking Scrolls
+Chantme: Checking Scrolls
+Chantme: Checking Scrolls
+Chantme: Checking Scrolls
+Chantme: Finding Triple
+Chantme: Slot i: 10 item: wbook0 Slot j: 11 item: wbook0 Slot k: 15 item: wbook0
+Chantme: Compounding Items
+Chantme: Finding Triple
+Chantme: Slot i: 10 item: wbook0 Slot j: 11 item: wbook0 Slot k: 15 item: wbook0
+Chantme: Using Mass Production Skill
+Chantme: Used Mass Production 50%
+Chantme: Compound accessory!
+Chantme: Finding Triple
+Chantme: Finding Triple
+Chantme: Finding Triple
+Chantme: Finding Triple
+Chantme: Searching Items to be sold
+promise rejected: 
+ { reason: 'not_there', failed: true }
+FunWarIAm killed a Bat gray
+FunWarIAm killed a Bat gray
+FunWarIAm killed a Bat gray
+FunWarIAm: Used taunt
+185 gold gold
+185 gold gold
+185 gold gold
+Received 12,000 gold gray
+Received 12,000 gold gray
+Received 12,000 gold gray
+Received 12,000 gold gray
+Received 12,000 gold gray
+FunWarIAm killed a Bat gray
+Chantme: Restoring Party
+Chantme: Using Merchants Luck Skill
+Chantme: In main
+Chantme: Selling Trash
+Chantme: Upgrading Items
+Chantme: Checking Scrolls
+Chantme: Checking Scrolls
+Chantme: Checking Scrolls
+smart_move: main -465 -71
+Chantme: Finding Triple
+Chantme: Finding Triple
+Chantme: Finding Triple
+Chantme: Finding Triple
+Chantme: Finding Triple
+Chantme: Searching Items to be sold
+Chantme: Searching for a path... #89D4A2
+Item combination succeeded white
+promise rejected: 
+ {
+  response: 'cooldown',
+  skill: 'attack',
+  place: 'attack',
+  id: '3204105',
+  ms: 728,
+  failed: true,
+  reason: 'cooldown'
+}
+FunStrike killed a Bat gray
+FunStrike killed a Bat gray
+FunStrike killed a Bat gray
+FunWarIAm: Used taunt
+181 gold gold
+181 gold gold
+181 gold gold
+FunStrike killed a Bat gray
+FunWarIAm killed a Bat gray
+FunWarIAm killed a Bat gray
+FunWarIAm killed a Bat gray
+FunWarIAm killed a Bat gray
+182 gold gold
+182 gold gold
+182 gold gold
+Shepart killed a Bat gray
+Shepart killed a Bat gray
+Shepart killed a Bat gray
+Shepart killed a Bat gray
+201 gold gold
+201 gold gold
+201 gold gold
+FunWarIAm killed a Bat gray
+FunWarIAm killed a Bat gray
+FunWarIAm killed a Bat gray
+FunWarIAm: Used taunt
+FunWarIAm killed a Bat gray
+206 gold gold
+206 gold gold
+206 gold gold
+FunStrike killed a Bat gray
+FunStrike killed a Bat gray
+FunStrike killed a Bat gray
+189 gold gold
+189 gold gold
+FunStrike killed a Bat gray
+189 gold gold
+FunWarIAm: Used taunt
+FunWarIAm killed a Bat gray
+FunWarIAm killed a Bat gray
+FunWarIAm killed a Bat gray
+FunWarIAm killed a Bat gray
+203 gold gold
+203 gold gold
+203 gold gold
+FunWarIAm: Used taunt
+promise rejected: 
+ {
+  response: 'cooldown',
+  skill: 'attack',
+  place: 'attack',
+  id: '3204908',
+  ms: 1192,
+  failed: true,
+  reason: 'cooldown'
+}
+Not logged in.
+Not logged in.
+Not logged in.
+promise rejected: 
+ {
+  response: 'cooldown',
+  skill: 'attack',
+  place: 'attack',
+  id: '3204908',
+  ms: 1192,
+  failed: true,
+  reason: 'cooldown'
+}
+FunWarIAm killed a Bat gray
+FunWarIAm killed a Bat gray
+FunWarIAm: Used taunt
+promise rejected: 
+ { reason: 'not_there', failed: true }
+Not logged in.
+FunWarIAm killed a Bat gray
+215 gold gold
+215 gold gold
+FunWarIAm killed a Bat gray
+215 gold gold
+FunStrike killed a Bat gray
+FunWarIAm: Used taunt
+FunStrike killed a Bat gray
+FunStrike killed a Bat gray
+191 gold gold
+FunStrike killed a Bat gray
+promise rejected: 
+ { reason: 'not_there', failed: true }
+191 gold gold
+191 gold gold
+Chantme: Path found! #C882D1
+FunWarIAm killed a Bat gray
+FunWarIAm killed a Bat gray
+FunWarIAm killed a Bat gray
+FunWarIAm killed a Bat gray
+FunWarIAm: Used taunt
+167 gold gold
+167 gold gold
+167 gold gold
+Chantme: Buying Scrolls
+Chantme: Bought 1 Compound Scroll
+Spent 6,400 gold gray
+Shepart killed a Bat gray
+Shepart killed a Bat gray
+Shepart killed a Bat gray
+Shepart killed a Bat gray
+FunWarIAm: Used taunt
+156 gold gold
+156 gold gold
+156 gold gold
+Chantme: Restoring Party
+Chantme: Using Merchants Luck Skill
+Chantme: Not in main
+smart_move: main 0 0
+Chantme: Searching for a path... #89D4A2
+FunStrike killed a Bat gray
+FunStrike killed a Bat gray
+FunStrike killed a Bat gray
+FunStrike killed a Bat gray
+142 gold gold
+142 gold gold
+FunWarIAm: Used taunt
+142 gold gold
+promise rejected: 
+ {
+  response: 'cooldown',
+  skill: 'attack',
+  place: 'attack',
+  id: '3205879',
+  ms: 951,
+  failed: true,
+  reason: 'cooldown'
+}
+FunWarIAm: Used taunt
+FunWarIAm killed a Bat gray
+FunWarIAm killed a Bat gray
+FunWarIAm killed a Bat gray
+156 gold gold
+156 gold gold
+156 gold gold
+FunWarIAm killed a Bat gray
+Shepart killed a Bat gray
+Shepart killed a Bat gray
+Shepart killed a Bat gray
+FunWarIAm: Used taunt
+189 gold gold
+189 gold gold
+189 gold gold
+Shepart killed a Bat gray
+FunStrike killed a Bat gray
+FunStrike killed a Bat gray
+FunStrike killed a Bat gray
+189 gold gold
+189 gold gold
+189 gold gold
+FunStrike killed a Bat gray
+Chantme: Path found! #C882D1
+Shepart killed a Bat gray
+Shepart killed a Bat gray
+Shepart killed a Bat gray
+Shepart killed a Bat gray
+FunWarIAm: Used taunt
+167 gold gold
+167 gold gold
+167 gold gold
+Chantme: Restoring Party
+Chantme: Using Merchants Luck Skill
+Chantme: In main
+Chantme: Selling Trash
+Chantme: Upgrading Items
+Chantme: Checking Scrolls
+Chantme: Checking Scrolls
+Chantme: Checking Scrolls
+Chantme: Checking Scrolls
+Chantme: Finding Triple
+Chantme: Finding Triple
+Chantme: Finding Triple
+Chantme: Finding Triple
+Chantme: Finding Triple
+Chantme: Searching Items to be sold
+FunStrike killed a Bat gray
+FunStrike killed a Bat gray
+FunStrike killed a Bat gray
+FunStrike killed a Bat gray
+FunWarIAm: Used taunt
+207 gold gold
+207 gold gold
+207 gold gold
+Chantme: Restoring Party
+Chantme: Using Merchants Luck Skill
+Chantme: In main
+Chantme: Selling Trash
+Chantme: Upgrading Items
+Chantme: Checking Scrolls
+Chantme: Checking Scrolls
+Chantme: Checking Scrolls
+Chantme: Checking Scrolls
+Chantme: Finding Triple
+Chantme: Finding Triple
+Chantme: Finding Triple
+Chantme: Finding Triple
+Chantme: Finding Triple
+Chantme: Searching Items to be sold
+FunStrike killed a Bat gray
+FunStrike killed a Bat gray
+FunStrike killed a Bat gray
+FunStrike killed a Bat gray
+153 gold gold
+153 gold gold
+153 gold gold
+Chantme: Restoring Party
+Chantme: Using Merchants Luck Skill
+Chantme: In main
+Chantme: Selling Trash
+Chantme: Upgrading Items
+Chantme: Checking Scrolls
+Chantme: Checking Scrolls
+Chantme: Checking Scrolls
+Chantme: Checking Scrolls
+Chantme: Finding Triple
+Chantme: Finding Triple
+Chantme: Finding Triple
+Chantme: Finding Triple
+Chantme: Finding Triple
+Chantme: Searching Items to be sold
+An Unknown Error [HTTP] red
+Not logged in.
+Not logged in.
+Not logged in.
+Chantme: Restoring Party
+Chantme: Using Merchants Luck Skill
+Chantme: In main
+Chantme: Selling Trash
+Chantme: Upgrading Items
+Chantme: Checking Scrolls
+Chantme: Checking Scrolls
+Chantme: Checking Scrolls
+Chantme: Checking Scrolls
+Chantme: Finding Triple
+Chantme: Finding Triple
+Chantme: Finding Triple
+Chantme: Finding Triple
+Chantme: Finding Triple
+Chantme: Searching Items to be sold
+FunWarIAm: Used taunt
+FunStrike killed a Bat gray
+FunStrike killed a Bat gray
+FunStrike killed a Bat gray
+FunStrike killed a Bat gray
+174 gold gold
+174 gold gold
+174 gold gold
+Chantme: Restoring Party
+Chantme: Using Merchants Luck Skill
+Chantme: In main
+Chantme: Selling Trash
+Chantme: Upgrading Items
+Chantme: Checking Scrolls
+Chantme: Checking Scrolls
+Chantme: Checking Scrolls
+Chantme: Checking Scrolls
+Chantme: Finding Triple
+Chantme: Finding Triple
+Chantme: Finding Triple
+Chantme: Finding Triple
+Chantme: Finding Triple
+Chantme: Searching Items to be sold
+FunWarIAm: Used taunt
+Chantme: Restoring Party
+Chantme: Using Merchants Luck Skill
+Chantme: In main
+Chantme: Selling Trash
+Chantme: Upgrading Items
+Chantme: Checking Scrolls
+Chantme: Checking Scrolls
+Chantme: Checking Scrolls
+Chantme: Checking Scrolls
+Chantme: Finding Triple
+Chantme: Finding Triple
+Chantme: Finding Triple
+Chantme: Finding Triple
+Chantme: Finding Triple
+Chantme: Searching Items to be sold
+FunWarIAm killed a Bat gray
+FunWarIAm killed a Bat gray
+FunWarIAm killed a Bat gray
+FunWarIAm killed a Bat gray
+142 gold gold
+142 gold gold
+142 gold gold
+Chantme: Restoring Party
+Chantme: Using Merchants Luck Skill
+Chantme: In main
+Chantme: Selling Trash
+Chantme: Upgrading Items
+Chantme: Checking Scrolls
+Chantme: Checking Scrolls
+Chantme: Checking Scrolls
+Chantme: Checking Scrolls
+Chantme: Finding Triple
+Chantme: Finding Triple
+Chantme: Finding Triple
+Chantme: Finding Triple
+Chantme: Finding Triple
+Chantme: Searching Items to be sold
+FunWarIAm killed a Bat gray
+promise rejected: 
+ { reason: 'not_there', failed: true }
+FunWarIAm killed a Bat gray
+FunWarIAm killed a Bat gray
+FunWarIAm killed a Bat gray
+201 gold gold
+201 gold gold
+Chantme: Restoring Party
+Chantme: Using Merchants Luck Skill
+Chantme: In main
+Chantme: Selling Trash
+Chantme: Upgrading Items
+Chantme: Checking Scrolls
+Chantme: Checking Scrolls
+Chantme: Checking Scrolls
+Chantme: Checking Scrolls
+Chantme: Finding Triple
+Chantme: Finding Triple
+Chantme: Finding Triple
+Chantme: Finding Triple
+Chantme: Finding Triple
+Chantme: Searching Items to be sold
+201 gold gold
+FunWarIAm: Used taunt
+Chantme: Restoring Party
+Chantme: Using Merchants Luck Skill
+Chantme: In main
+Chantme: Selling Trash
+Chantme: Upgrading Items
+Chantme: Checking Scrolls
+Chantme: Checking Scrolls
+Chantme: Checking Scrolls
+Chantme: Checking Scrolls
+Chantme: Finding Triple
+Chantme: Finding Triple
+Chantme: Finding Triple
+Chantme: Finding Triple
+Chantme: Finding Triple
+Chantme: Searching Items to be sold
+Shepart killed a Bat gray
+Shepart killed a Bat gray
+Shepart killed a Bat gray
+Shepart killed a Bat gray
+FunWarIAm: Used taunt
+196 gold gold
+196 gold gold
+196 gold gold
+Chantme: Restoring Party
+Chantme: Using Merchants Luck Skill
+Chantme: In main
+Chantme: Selling Trash
+Chantme: Upgrading Items
+Chantme: Checking Scrolls
+Chantme: Checking Scrolls
+Chantme: Checking Scrolls
+Chantme: Checking Scrolls
+Chantme: Finding Triple
+Chantme: Finding Triple
+Chantme: Finding Triple
+Chantme: Finding Triple
+Chantme: Finding Triple
+Chantme: Searching Items to be sold
+Chantme: Restoring Party
+Chantme: Using Merchants Luck Skill
+Chantme: In main
+Chantme: Selling Trash
+Chantme: Upgrading Items
+Chantme: Checking Scrolls
+Chantme: Checking Scrolls
+Chantme: Checking Scrolls
+Chantme: Checking Scrolls
+Chantme: Finding Triple
+Chantme: Finding Triple
+Chantme: Finding Triple
+Chantme: Finding Triple
+Chantme: Finding Triple
+Chantme: Searching Items to be sold
+FunWarIAm killed a Bat gray
+FunWarIAm killed a Bat gray
+FunWarIAm killed a Bat gray
+FunWarIAm killed a Bat gray
+179 gold gold
+179 gold gold
+179 gold gold
+Chantme: Restoring Party
+Chantme: Using Merchants Luck Skill
+Chantme: In main
+Chantme: Selling Trash
+Chantme: Upgrading Items
+Chantme: Checking Scrolls
+Chantme: Checking Scrolls
+Chantme: Checking Scrolls
+Chantme: Checking Scrolls
+Chantme: Finding Triple
+Chantme: Finding Triple
+Chantme: Finding Triple
+Chantme: Finding Triple
+Chantme: Finding Triple
+Chantme: Searching Items to be sold
+FunWarIAm killed a Bat gray
+FunWarIAm killed a Bat gray
+FunWarIAm killed a Bat gray
+FunWarIAm killed a Bat gray
+FunWarIAm: Used taunt
+168 gold gold
+168 gold gold
+Chantme: Restoring Party
+Chantme: Using Merchants Luck Skill
+Chantme: In main
+Chantme: Selling Trash
+Chantme: Upgrading Items
+Chantme: Checking Scrolls
+Chantme: Checking Scrolls
+Chantme: Checking Scrolls
+Chantme: Checking Scrolls
+Chantme: Finding Triple
+168 gold gold
+Chantme: Finding Triple
+Chantme: Finding Triple
+Chantme: Finding Triple
+Chantme: Finding Triple
+Chantme: Searching Items to be sold
+promise rejected: 
+ {
+  response: 'cooldown',
+  skill: 'attack',
+  place: 'attack',
+  id: '3205750',
+  ms: 1201,
+  failed: true,
+  reason: 'cooldown'
+}
+Chantme: Restoring Party
+Chantme: Using Merchants Luck Skill
+Chantme: In main
+Chantme: Selling Trash
+Chantme: Upgrading Items
+Chantme: Checking Scrolls
+Chantme: Checking Scrolls
+Chantme: Checking Scrolls
+Chantme: Checking Scrolls
+Chantme: Finding Triple
+Chantme: Finding Triple
+Chantme: Finding Triple
+Chantme: Finding Triple
+Chantme: Finding Triple
+Chantme: Searching Items to be sold
+FunStrike killed a Bat gray
+FunStrike killed a Bat gray
+FunStrike killed a Bat gray
+FunStrike killed a Bat gray
+FunWarIAm: Used taunt
+261 gold gold
+261 gold gold
+261 gold gold
+Chantme: Restoring Party
+Chantme: Using Merchants Luck Skill
+Chantme: In main
+Chantme: Selling Trash
+Chantme: Upgrading Items
+Chantme: Checking Scrolls
+Chantme: Checking Scrolls
+Chantme: Checking Scrolls
+Chantme: Checking Scrolls
+Chantme: Finding Triple
+Chantme: Finding Triple
+Chantme: Finding Triple
+Chantme: Finding Triple
+Chantme: Finding Triple
+Chantme: Searching Items to be sold
+Chantme: Restoring Party
+Chantme: Using Merchants Luck Skill
+Chantme: In main
+Chantme: Selling Trash
+Chantme: Upgrading Items
+Chantme: Checking Scrolls
+Chantme: Checking Scrolls
+Chantme: Checking Scrolls
+Chantme: Checking Scrolls
+Chantme: Finding Triple
+Chantme: Finding Triple
+Chantme: Finding Triple
+Chantme: Finding Triple
+Chantme: Finding Triple
+Chantme: Searching Items to be sold
+FunStrike killed a Bat gray
+FunStrike killed a Bat gray
+FunStrike killed a Bat gray
+FunStrike killed a Bat gray
+180 gold gold
+180 gold gold
+180 gold gold
+Chantme: Restoring Party
+Chantme: Using Merchants Luck Skill
+Chantme: In main
+Chantme: Selling Trash
+Chantme: Upgrading Items
+Chantme: Checking Scrolls
+Chantme: Checking Scrolls
+Chantme: Checking Scrolls
+Chantme: Checking Scrolls
+Chantme: Finding Triple
+Chantme: Finding Triple
+Chantme: Finding Triple
+Chantme: Finding Triple
+Chantme: Finding Triple
+Chantme: Searching Items to be sold
+FunStrike killed a Bat gray
+FunStrike killed a Bat gray
+FunStrike killed a Bat gray
+FunStrike killed a Bat gray
+FunWarIAm: Used taunt
+211 gold gold
+211 gold gold
+211 gold gold
+Chantme: Restoring Party
+Chantme: Using Merchants Luck Skill
+Chantme: In main
+Chantme: Selling Trash
+Chantme: Upgrading Items
+Chantme: Checking Scrolls
+Chantme: Checking Scrolls
+Chantme: Checking Scrolls
+Chantme: Checking Scrolls
+Chantme: Finding Triple
+Chantme: Finding Triple
+Chantme: Finding Triple
+Chantme: Finding Triple
+Chantme: Finding Triple
+Chantme: Searching Items to be sold
+Chantme: Restoring Party
+Chantme: Using Merchants Luck Skill
+Chantme: In main
+Chantme: Selling Trash
+Chantme: Upgrading Items
+Chantme: Checking Scrolls
+Chantme: Checking Scrolls
+Chantme: Checking Scrolls
+Chantme: Checking Scrolls
+Chantme: Finding Triple
+Chantme: Finding Triple
+Chantme: Finding Triple
+Chantme: Finding Triple
+Chantme: Finding Triple
+Chantme: Searching Items to be sold
+promise rejected: 
+ { reason: 'not_there', failed: true }
+FunWarIAm killed a Bat gray
+promise rejected: 
+ { reason: 'not_there', failed: true }
+FunWarIAm killed a Bat gray
+FunWarIAm killed a Bat gray
+FunWarIAm killed a Bat gray
+FunWarIAm: Used taunt
+194 gold gold
+194 gold gold
+194 gold gold
+Chantme: Restoring Party
+Chantme: Using Merchants Luck Skill
+Chantme: In main
+Chantme: Selling Trash
+Chantme: Upgrading Items
+Chantme: Checking Scrolls
+Chantme: Checking Scrolls
+Chantme: Checking Scrolls
+Chantme: Checking Scrolls
+Chantme: Finding Triple
+Chantme: Finding Triple
+Chantme: Finding Triple
+Chantme: Finding Triple
+Chantme: Finding Triple
+Chantme: Searching Items to be sold
+Chantme: Restoring Party
+Chantme: Using Merchants Luck Skill
+Chantme: In main
+Chantme: Selling Trash
+Chantme: Upgrading Items
+Chantme: Checking Scrolls
+Chantme: Checking Scrolls
+Chantme: Checking Scrolls
+Chantme: Checking Scrolls
+Chantme: Finding Triple
+Chantme: Finding Triple
+Chantme: Finding Triple
+Chantme: Finding Triple
+Chantme: Finding Triple
+Chantme: Searching Items to be sold
+FunStrike killed a Bat gray
+FunStrike killed a Bat gray
+FunStrike killed a Bat gray
+FunStrike killed a Bat gray
+195 gold gold
+195 gold gold
+195 gold gold
+Not logged in.
+Not logged in.
+Not logged in.
+Not logged in.
+Chantme: Restoring Party
+Chantme: Using Merchants Luck Skill
+Chantme: In main
+Chantme: Selling Trash
+Chantme: Upgrading Items
+Chantme: Checking Scrolls
+Chantme: Checking Scrolls
+Chantme: Checking Scrolls
+Chantme: Checking Scrolls
+Chantme: Finding Triple
+Chantme: Finding Triple
+Chantme: Finding Triple
+Chantme: Finding Triple
+Chantme: Finding Triple
+Chantme: Searching Items to be sold
+Shepart killed a Bat gray
+Shepart killed a Bat gray
+Shepart killed a Bat gray
+Shepart killed a Bat gray
+179 gold gold
+179 gold gold
+179 gold gold
+Chantme: Restoring Party
+Chantme: Using Merchants Luck Skill
+Chantme: In main
+Chantme: Selling Trash
+Chantme: Upgrading Items
+Chantme: Checking Scrolls
+Chantme: Checking Scrolls
+Chantme: Checking Scrolls
+Chantme: Checking Scrolls
+Chantme: Finding Triple
+Chantme: Finding Triple
+Chantme: Finding Triple
+Chantme: Finding Triple
+Chantme: Finding Triple
+Chantme: Searching Items to be sold
+Chantme: Restoring Party
+Chantme: Using Merchants Luck Skill
+Chantme: In main
+Chantme: Selling Trash
+Chantme: Upgrading Items
+Chantme: Checking Scrolls
+Chantme: Checking Scrolls
+Chantme: Checking Scrolls
+Chantme: Checking Scrolls
+Chantme: Finding Triple
+Chantme: Finding Triple
+Chantme: Finding Triple
+Chantme: Finding Triple
+Chantme: Finding Triple
+Chantme: Searching Items to be sold
+FunWarIAm killed a Bat gray
+FunWarIAm killed a Bat gray
+FunWarIAm killed a Bat gray
+FunWarIAm killed a Bat gray
+FunWarIAm: Used taunt
+161 gold gold
+161 gold gold
+161 gold gold
+Chantme: Restoring Party
+Chantme: Using Merchants Luck Skill
+Chantme: In main
+Chantme: Selling Trash
+Chantme: Upgrading Items
+Chantme: Checking Scrolls
+Chantme: Checking Scrolls
+Chantme: Checking Scrolls
+Chantme: Checking Scrolls
+Chantme: Finding Triple
+Chantme: Finding Triple
+Chantme: Finding Triple
+Chantme: Finding Triple
+Chantme: Finding Triple
+Chantme: Searching Items to be sold

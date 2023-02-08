@@ -1174,7 +1174,7 @@ let farm_monster_type = "bat";
 let player_state = 'idle';
 
 function start() {
-    if (character.name == party_leader) {
+    if (character.name == merchant_name) {
         for (i in party) {
 			start_character(party[i], "main");
         }
@@ -1182,7 +1182,7 @@ function start() {
 }
 
 function stop() {
-	if (character.name == party_leader) {
+	if (character.name == merchant_name) {
         for (i in party) {
 			stop_character(party[i], "main");
         }
@@ -1272,7 +1272,7 @@ function handle_hunt_quest() {
         if (!character.s.monsterhunt) {
             debug("Getting new hunterQuest");
             if(character.name !== merchant_name) player_state = 'getting quest';
-            move({
+            smart_move({
                 to: "monsterhunter"
             }, function () {
                 parent.socket.emit("monsterhunt");
@@ -1301,7 +1301,7 @@ function handle_hunt_quest() {
             //Turn in fulfilled quest
             if (character.s.monsterhunt.c === 0) {
                 debug("Fulfilled Hunter Quest");
-                move({
+                smart_move({
                     to: "monsterhunter"
                 }, function () {
                     //Remove fulfilled quest from localStorage
@@ -1348,17 +1348,17 @@ function on_party_invite(name) {
 character.on("stacked", (data) => {
     //If there"s a master, stay close
     if (monsters_require_focus.includes(farm_monster_type)) {
-        //if (character.name === characterNames[0]) xmove(character.x, character.y + 20);
-        if (character.name === party[1]) xmove(character.x + 40, character.y - 45);
-        if (character.name === party[2]) xmove(character.x - 40, character.y - 45);
-        if (character.name === merchant_name) xmove(character.x, character.y - 80);
+        //if (character.name === characterNames[0]) xsmart_move(character.x, character.y + 20);
+        if (character.name === party[1]) xsmart_move(character.x + 40, character.y - 45);
+        if (character.name === party[2]) xsmart_move(character.x - 40, character.y - 45);
+        if (character.name === merchant_name) xsmart_move(character.x, character.y - 80);
     }
     //If there is no master, spread the characters around, for better farming efficiency
     else {
-        //if (character.name === characterNames[0]) xmove(character.x, character.y + 60);
-        if (character.name === party[1]) xmove(character.x + 70, character.y - 60);
-        if (character.name === party[2]) xmove(character.x - 70, character.y - 60);
-        if (character.name === merchant_name) xmove(character.x, character.y - 80);
+        //if (character.name === characterNames[0]) xsmart_move(character.x, character.y + 60);
+        if (character.name === party[1]) xsmart_move(character.x + 70, character.y - 60);
+        if (character.name === party[2]) xsmart_move(character.x - 70, character.y - 60);
+        if (character.name === merchant_name) xsmart_move(character.x, character.y - 80);
     }
 });
 
@@ -1407,13 +1407,13 @@ function move_to_spot(spot) {
     let spot_center_y = Math.floor(boundary[1] + ((boundary[3] - boundary[1]) / 2));
     if(character.name !== merchant_name) player_state = 'moving to spot';
     debug("Moving to spot");
-    move({
+    smart_move({
         map: spot.map,
         x: spot_center_x,
         y: spot_center_y
     }, function () {
-        if (character.name === party[1]) xmove(spot_center_x + 70, spot_center_y - 30); //Old: +45 / -20
-        if (character.name === party[2]) xmove(spot_center_x - 70, spot_center_y - 30); //Old: -45 / -20
+        if (character.name === party[1]) xsmart_move(spot_center_x + 70, spot_center_y - 30); //Old: +45 / -20
+        if (character.name === party[2]) xsmart_move(spot_center_x - 70, spot_center_y - 30); //Old: -45 / -20
     });
 }
 
@@ -1514,7 +1514,7 @@ function fight(target) {
     } else {
         let dist = Math.sqrt(Math.pow(target.real_x - character.real_x, 2) + Math.pow(target.real_y - character.real_y, 2))
         if (dist > character.range - 20)
-            move((target.real_x + character.real_x) / 2, (target.real_y + character.real_y) / 2);
+            smart_move((target.real_x + character.real_x) / 2, (target.real_y + character.real_y) / 2);
     }
 }
 
@@ -1564,14 +1564,14 @@ function followMaster() {
 		//If master is on screen, follow him
 		if (theMaster && Math.ceil(distance(character, theMaster)) > masterMaxDist) {
 			debug("Following Master with Get_Player");
-			xmove(theMaster.x, theMaster.y);
+			xsmart_move(theMaster.x, theMaster.y);
             if(character.name !== merchant_name) player_state = 'follow master';
 		}
 		//If the master is too far away,
 		//followers read masters location from localStorage
 		else if (!theMaster && pos) {
 			debug("Following Master from Local Storage");
-			move(pos);
+			smart_move(pos);
             if(character.name !== merchant_name) player_state = 'follow master';
 		}
 	}
@@ -1663,7 +1663,7 @@ function merchantSkills() {
         if(upgradeItems()) return;
 
 		if (buyScrolls("check")) {
-			move("scrolls", () => {
+			smart_move("scrolls", () => {
 				buyScrolls("buy");
 			});
         }
@@ -1683,7 +1683,7 @@ function merchantSkills() {
 		if(exchangeGemsQuests('check')) {
 			const npc = find_npc(locateGems("findNpc"));
 			if(distance(character, npc) > 1) {
-				move(npc, () => {
+				smart_move(npc, () => {
 					exchangeGemsQuests();
 				});
 			} else {
@@ -1695,7 +1695,7 @@ function merchantSkills() {
 		openMerchantStand();
     } else if(!is_moving(character) && merchant_state == 'idle') {
 		debug("Not in main");
-		move("main");
+		smart_move("main");
 	}
 
 	//Visit farm-party every 10 minutes.
@@ -1705,7 +1705,7 @@ function merchantSkills() {
 		merchant_state = "visit";
         debug("Visit farm-party");
 		update_farming_spot();
-        move("main", () => {
+        smart_move("main", () => {
             buyPotions();
             relocateItems();
             let boundary = farming_spot.monster.boundary;
@@ -1719,15 +1719,15 @@ function merchantSkills() {
                 y: spot_center_y
             };
 
-            move(pos, () => {
+            smart_move(pos, () => {
                 transferPotions();
                 merchantsLuck();
                 setTimeout(function() {
-                    move("bank", () => {
+                    smart_move("bank", () => {
                         depositGold();
                         depositSelectedItems();
 						setTimeout(function() {
-							move("main", () => {
+							smart_move("main", () => {
 								merchant_state = "idle";
 							});
 						}, 5000);
@@ -2173,7 +2173,7 @@ function craftItems(action = "default") {
 	for (const item of craft_items) {
 		if (checkCraftIngredients(item)) {
 			if (action === "check") return checkCraftIngredients(item);
-			move(find_npc("craftsman"), () => {
+			smart_move(find_npc("craftsman"), () => {
 				auto_craft(item);
 				setTimeout(() => {
 					// if (!checkCraftIngredients(item)) openMerchantStand();
@@ -2214,7 +2214,7 @@ function dismantleItems(action = "default") {
 	if (merchantDebugMode) debug("Dismantling Items");
 	if (action === "check") return findDismantleItems("find");
 	if (findDismantleItems("find")) {
-		move(find_npc("craftsman"), () => {
+		smart_move(find_npc("craftsman"), () => {
 			dismantle(findDismantleItems("slot"));
 			setTimeout(() => {
 				// if (!findDismantleItems("find")) openMerchantStand();
@@ -2277,7 +2277,7 @@ function goFishing(action = "default") {
 				|| character.slots.mainhand?.name === "rod")) {
 			//Move to fishing spot
 			if (distance(character, fishingSpot) > 10) {
-				move(fishingSpot, () => { equipFishingGear() });
+				smart_move(fishingSpot, () => { equipFishingGear() });
 				//If at fishing spot, equip the fishing rod and fish
 			} else if (distance(character, fishingSpot) < 10) {
 				if (character.slots.mainhand?.name !== "rod") {

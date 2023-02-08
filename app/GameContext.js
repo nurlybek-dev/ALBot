@@ -85,7 +85,7 @@ class GameContext extends Context {
         const old_dc = this.context.disconnect;
         this.context.disconnect = () => {
             old_dc();
-            extensions.relog();
+            extensions.reload();
         }
 
 

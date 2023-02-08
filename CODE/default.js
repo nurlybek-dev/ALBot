@@ -86,7 +86,9 @@ const trash_items = [
     "cscroll0"
 ]
 
-const monsters_require_focus = []
+const monsters_require_focus = [];
+const monsters_to_hunt = [];
+const event_monsters = [];
 
 const special_monsters = ["cutebee", "snowman", "goldenbat", "wabbit", "phoenix", "fvampire", "mvampire", "grinch"];
 
@@ -96,6 +98,10 @@ const leader = party[0];
 var reviving = false;
 var farm_monster_type = "crab";
 var fighting = false;
+var focus_target = false;
+
+var target = null;
+
 
 if (character.rip) {
     setTimeout(function () {
@@ -140,7 +146,7 @@ setInterval(function () {
 
     if (is_moving(character)) return;
 
-    let target = get_target();
+    target = get_target();
     if (target) {
         // if (character.ctype === "mage") mageSkills(target);
         if (character.ctype === "priest") priestSkills(target);
@@ -221,7 +227,6 @@ function warriorSkills(target) {
 	if (character.mp > (character.max_mp * manaReserve)) {
         if(target.target != character.name && !is_on_cooldown("taunt")) {
             use_skill("taunt", target);
-            debug("Used taunt");
         }
 	}
 }
@@ -371,7 +376,6 @@ function fight(target) {
 }
 
 function get_target() {
-
     if(target && parent.entities[target] && valid_target(parent.entities[target])) {
         return target;
     } else {
@@ -403,10 +407,8 @@ function get_target() {
             type: farm_monster_type,
             no_target: true
         });
-        if (valid_target(target)) {
-            change_target(target);
-            return target;
-        }
+		change_target(target);
+		return target;
     } else if (focus_target && get_player(party_leader) && get_player(party_leader).target) {
         target = parent.entities[get_player(party_leader).target];
         if (valid_target(target)) {
@@ -429,7 +431,7 @@ function valid_target(target) {
 }
 
 function use_potions() {
-    if (can_use("hp") && ((character.hp / character.max_hp <= .50) || (character.max_hp - character.hp > 200)) || 
+    if (can_use("hp") && ((character.hp / character.max_hp <= .50) || (character.max_hp - character.hp > 400)) || 
 		character.mp / character.max_mp <= .50 || (character.max_mp - character.mp > 300)) {
 		use_hp_or_mp();
     }

@@ -193,6 +193,8 @@ function sellTrash() {
         }
     });
 
+    console.log("has empty space: " + hasEmptySpace);
+
     if(!hasEmptySpace) {
         fighting = false;
         smart_move('main', () => {

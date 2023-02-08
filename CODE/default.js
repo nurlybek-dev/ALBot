@@ -1,3 +1,91 @@
+
+const trash_items = [
+    "helmet",
+    "wcap",
+    "partyhat",
+    "xmashat",
+    "rednose",
+    "helmet1",
+    "bunnyears",
+    "eears",
+    "ghatb",
+    "ghatp",
+    "coat",
+    "wattire",
+    "xmassweater",
+    "epyjamas",
+    "coat1",
+    "sweaterhs",
+    "pyjamas",
+    "harmor",
+    "pants",
+    "wbreeches",
+    "xmaspants",
+    "pants1",
+    "hpants",
+    "gloves",
+    "wgloves",
+    "poker",
+    "gloves1",
+    "mittens",
+    "hgloves",
+
+    "shoes",
+    "eslippers",
+    "wshoes",
+    "xmasshoes",
+    "shoes1",
+
+    "iceskates",
+    "hboots",
+
+    "broom",
+    "mace",
+    "wbasher",
+    "claw",
+    "blade",
+    "cclaw",
+    "stinger",
+    "bow",
+    "glolipop",
+    "ololipop",
+    "mushroomstaff",
+    "slimestaff",
+    "pouchbow",
+    "weaver",
+    "xmace",
+    "sword",
+    "swifty",
+    "wand",
+    "throwingstars",
+    "spear",
+    "candycanesword",
+    "basher",
+    "rapier",
+    "pmace",
+    "cupid",
+    "snowflakes",
+    "carrotsword",
+    "ornamentstaff",
+    "merry",
+    "bataxe",
+    "pinkie",
+    "dagger",
+    "swordofthedead",
+    "daggerofthedead",
+    "maceofthedead",
+    "staffofthedead",
+    "bowofthedead",
+    "crossbow",
+    "pmaceofthedead",
+    "wshield",
+    "wbook0",
+    "hpot0",
+    "mpot0",
+    "scroll0",
+    "cscroll0"
+]
+
 var reviving = false;
 var targetMonster = "crab";
 var fighting = false;
@@ -50,7 +138,7 @@ setInterval(function () {
     }
     loot();
 
-    if(character.ctype == "ranger") {
+    if (character.ctype == "ranger") {
         const targets = Object.values(parent.entities).filter(entity => entity.mtype === targetMonster && entity.level <= 1 && is_in_range(entity, "3shot") && is_in_range(entity, "5shot"));
         if (character.level >= 75
             && targets.length >= 5
@@ -67,7 +155,7 @@ setInterval(function () {
             debug("Used 3-Shot");
         } else {
             let target;
-            target = get_nearest_monster({type: targetMonster});
+            target = get_nearest_monster({ type: targetMonster });
             change_target(target);
             if (target) {
                 if (can_attack(target)) {
@@ -81,7 +169,7 @@ setInterval(function () {
         }
     } else {
         let target;
-        target = get_nearest_monster({type: targetMonster});
+        target = get_nearest_monster({ type: targetMonster });
         change_target(target);
         if (target) {
             if (can_attack(target)) {
@@ -95,3 +183,31 @@ setInterval(function () {
     }
 
 }, 1000 / 4);
+
+setInterval(function () {
+    let hasEmptySpace = false;
+    character.items.forEach((item, index) => {
+        if(item === null) {
+            hasEmptySpace = true;
+        }
+    });
+
+    if(!hasEmptySpace) {
+        smart_move('main', () => {
+            character.items.forEach((item, index) => {
+                if (item && trash_items.includes(item.name)) {
+                    item.q ? sell(index, item.q) : sell(index, item);
+                }
+            });
+
+            // BUY POTIONS
+
+            smart_move('bank', () => {
+                bank_deposit(character.gold);
+                smart_move(targetMonster, function () {
+                    fighting = true;
+                });
+            });
+        })
+    }
+}, 10000)

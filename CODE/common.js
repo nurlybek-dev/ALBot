@@ -1,5 +1,5 @@
 function start() {
-    if (character.name == merchant_name) {
+    if (character.name == party_leader) {
         for (i in party) {
 			start_character(party[i], "main");
         }
@@ -7,7 +7,7 @@ function start() {
 }
 
 function stop() {
-	if (character.name == merchant_name) {
+	if (character.name == party_leader) {
         for (i in party) {
 			stop_character(party[i], "main");
         }

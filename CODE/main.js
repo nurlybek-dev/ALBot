@@ -26,7 +26,7 @@ load_code('priest')
 let farming_spot = get_farming_spot(farm_monster_type);
 let target = null;
 
-start();
+// start();
 
 if(character.ctype == 'merchant') {
 	setInterval(function() {

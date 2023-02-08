@@ -145,14 +145,12 @@ setInterval(function () {
             && !is_on_cooldown("5shot")
             && character.mp > G.skills["5shot"].mp) {
             use_skill("5shot", targets);
-            debug("Used 5-Shot");
         }
         else if (character.level >= 60
             && targets.length >= 3
             && !is_on_cooldown("3shot")
             && character.mp > G.skills["3shot"].mp) {
             use_skill("3shot", targets);
-            debug("Used 3-Shot");
         } else {
             let target;
             target = get_nearest_monster({ type: targetMonster });

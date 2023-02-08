@@ -4,3 +4,5 @@ userData.json
 ./package-lock.json
 /app/localStorage/
 /app/sessionStorage/
+pid
+game.log

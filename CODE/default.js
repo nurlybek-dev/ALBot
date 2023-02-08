@@ -106,7 +106,7 @@ if (character.rip) {
 }
 
 setInterval(function () {
-    if (!fighting) {
+    if (!fighting || is_moving(character)) {
         return;
     }
 
@@ -180,9 +180,12 @@ setInterval(function () {
         }
     }
 
-}, 1000 / 4);
+}, 1000 / 2);
 
-setInterval(function () {
+
+
+
+function sellTrash() {
     let hasEmptySpace = false;
     character.items.forEach((item, index) => {
         if(item === null) {
@@ -191,21 +194,32 @@ setInterval(function () {
     });
 
     if(!hasEmptySpace) {
+        fighting = false;
         smart_move('main', () => {
-            character.items.forEach((item, index) => {
+
+            setTimeout(() => {
+                smart_move('bank', () => {
+                    bank_deposit(character.gold);
+                    smart_move(targetMonster, function () {
+                        fighting = true;
+                    });
+                });
+            }, 5000);
+
+            let i = 0;
+            setInterval(() => {
+                const item = character.items[i];
                 if (item && trash_items.includes(item.name)) {
                     item.q ? sell(index, item.q) : sell(index, item);
                 }
-            });
+                i = i + 1;
+            }, 100);
 
             // BUY POTIONS
-
-            smart_move('bank', () => {
-                bank_deposit(character.gold);
-                smart_move(targetMonster, function () {
-                    fighting = true;
-                });
-            });
         })
     }
-}, 10000)
+
+    setTimeout(60000, sellTrash);
+}
+
+setTimeout(60000, sellTrash);

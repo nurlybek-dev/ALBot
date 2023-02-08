@@ -186,6 +186,7 @@ setInterval(function () {
 
 
 function sellTrash() {
+    console.log("Sell trash");
     let hasEmptySpace = false;
     character.items.forEach((item, index) => {
         if(item === null) {
@@ -209,12 +210,15 @@ function sellTrash() {
             }, 5000);
 
             let i = 0;
-            setInterval(() => {
+            let a = setInterval(() => {
                 const item = character.items[i];
                 if (item && trash_items.includes(item.name)) {
                     item.q ? sell(index, item.q) : sell(index, item);
                 }
                 i = i + 1;
+                if(i >= 45) {
+                    clearInterval(a);
+                }
             }, 100);
 
             // BUY POTIONS

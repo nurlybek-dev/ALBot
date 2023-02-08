@@ -1272,7 +1272,7 @@ function handle_hunt_quest() {
         if (!character.s.monsterhunt) {
             debug("Getting new hunterQuest");
             if(character.name !== merchant_name) player_state = 'getting quest';
-            smart_move({
+            move({
                 to: "monsterhunter"
             }, function () {
                 parent.socket.emit("monsterhunt");
@@ -1301,7 +1301,7 @@ function handle_hunt_quest() {
             //Turn in fulfilled quest
             if (character.s.monsterhunt.c === 0) {
                 debug("Fulfilled Hunter Quest");
-                smart_move({
+                move({
                     to: "monsterhunter"
                 }, function () {
                     //Remove fulfilled quest from localStorage
@@ -1407,7 +1407,7 @@ function move_to_spot(spot) {
     let spot_center_y = Math.floor(boundary[1] + ((boundary[3] - boundary[1]) / 2));
     if(character.name !== merchant_name) player_state = 'moving to spot';
     debug("Moving to spot");
-    smart_move({
+    move({
         map: spot.map,
         x: spot_center_x,
         y: spot_center_y
@@ -1571,7 +1571,7 @@ function followMaster() {
 		//followers read masters location from localStorage
 		else if (!theMaster && pos) {
 			debug("Following Master from Local Storage");
-			smart_move(pos);
+			move(pos);
             if(character.name !== merchant_name) player_state = 'follow master';
 		}
 	}
@@ -1663,7 +1663,7 @@ function merchantSkills() {
         if(upgradeItems()) return;
 
 		if (buyScrolls("check")) {
-			smart_move("scrolls", () => {
+			move("scrolls", () => {
 				buyScrolls("buy");
 			});
         }
@@ -1683,7 +1683,7 @@ function merchantSkills() {
 		if(exchangeGemsQuests('check')) {
 			const npc = find_npc(locateGems("findNpc"));
 			if(distance(character, npc) > 1) {
-				smart_move(npc, () => {
+				move(npc, () => {
 					exchangeGemsQuests();
 				});
 			} else {
@@ -1695,7 +1695,7 @@ function merchantSkills() {
 		openMerchantStand();
     } else if(!is_moving(character) && merchant_state == 'idle') {
 		debug("Not in main");
-		smart_move("main");
+		move("main");
 	}
 
 	//Visit farm-party every 10 minutes.
@@ -1705,7 +1705,7 @@ function merchantSkills() {
 		merchant_state = "visit";
         debug("Visit farm-party");
 		update_farming_spot();
-        smart_move("main", () => {
+        move("main", () => {
             buyPotions();
             relocateItems();
             let boundary = farming_spot.monster.boundary;
@@ -1719,15 +1719,15 @@ function merchantSkills() {
                 y: spot_center_y
             };
 
-            smart_move(pos, () => {
+            move(pos, () => {
                 transferPotions();
                 merchantsLuck();
                 setTimeout(function() {
-                    smart_move("bank", () => {
+                    move("bank", () => {
                         depositGold();
                         depositSelectedItems();
 						setTimeout(function() {
-							smart_move("main", () => {
+							move("main", () => {
 								merchant_state = "idle";
 							});
 						}, 5000);
@@ -2173,7 +2173,7 @@ function craftItems(action = "default") {
 	for (const item of craft_items) {
 		if (checkCraftIngredients(item)) {
 			if (action === "check") return checkCraftIngredients(item);
-			smart_move(find_npc("craftsman"), () => {
+			move(find_npc("craftsman"), () => {
 				auto_craft(item);
 				setTimeout(() => {
 					// if (!checkCraftIngredients(item)) openMerchantStand();
@@ -2214,7 +2214,7 @@ function dismantleItems(action = "default") {
 	if (merchantDebugMode) debug("Dismantling Items");
 	if (action === "check") return findDismantleItems("find");
 	if (findDismantleItems("find")) {
-		smart_move(find_npc("craftsman"), () => {
+		move(find_npc("craftsman"), () => {
 			dismantle(findDismantleItems("slot"));
 			setTimeout(() => {
 				// if (!findDismantleItems("find")) openMerchantStand();
@@ -2277,7 +2277,7 @@ function goFishing(action = "default") {
 				|| character.slots.mainhand?.name === "rod")) {
 			//Move to fishing spot
 			if (distance(character, fishingSpot) > 10) {
-				smart_move(fishingSpot, () => { equipFishingGear() });
+				move(fishingSpot, () => { equipFishingGear() });
 				//If at fishing spot, equip the fishing rod and fish
 			} else if (distance(character, fishingSpot) < 10) {
 				if (character.slots.mainhand?.name !== "rod") {

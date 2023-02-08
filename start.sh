@@ -1,4 +1,3 @@
 #!/bin/bash
 
-node main > game.log &
-echo "$!" >> pid
+exec node main > game.log &

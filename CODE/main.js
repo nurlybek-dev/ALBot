@@ -1607,7 +1607,7 @@ function _set(name,value)
  * success
  */
 function debug(message) {
-	game_log(`${character.name}: ${message}`);
+	console.log(`${character.name}: ${message}`);
 }
 //Debug mode - Set to True for extensive Logs
 const merchantDebugMode = true;

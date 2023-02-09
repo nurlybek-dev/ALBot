@@ -116,9 +116,6 @@ var doingStuff = false;
 var sellingTrush = false;
 
 setInterval(function () {
-    if (!fighting || is_moving(character)) {
-        return;
-    }
     if (character.rip && !reviving) {
         reviving = true;
         fighting = false;

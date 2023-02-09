@@ -1,5 +1,3 @@
-const { random } = require("lodash");
-
 const trash_items = [
     "helmet",
     "wcap",
@@ -84,7 +82,11 @@ const trash_items = [
     "hpot0",
     "mpot0",
     "scroll0",
-    "cscroll0"
+    "cscroll0",
+	"hpamulet",
+	"ringsj",
+	"hpbelt",
+	"crabclaw",
 ]
 
 const monsters_require_focus = [];
@@ -100,11 +102,11 @@ var reviving = false;
 
 farm_monster_type = 'goo';
 if(character.name == 'FunStrike') {
-    farm_monster_type = "arcticbee";
+    farm_monster_type = "croc";
 } else if(character.name == 'FunRangerOne') {
     farm_monster_type = "squiq";
 } else if(character.name == 'FunRangerTwo') {
-    farm_monster_type = "croc";
+    farm_monster_type = "snake";
 }
 var fighting = false;
 var focus_target = false;
@@ -211,10 +213,10 @@ function sellTrash() {
     let a = setInterval(() => {
         const item = character.items[i];
         if (item && trash_items.includes(item.name)) {
-            item.q ? sell(index, item.q) : sell(index, item);
+            item.q ? sell(i, item.q) : sell(i, item);
         }
         i = i + 1;
-        if(i >= 45) {
+        if(i >= 42) {
             clearInterval(a);
             sellingTrush = false;
         }

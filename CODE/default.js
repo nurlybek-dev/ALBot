@@ -134,7 +134,7 @@ smart_move(farm_monster_type, function () {
                 respawn();
                 setTimeout(function () {
                     reviving = false;
-                    smart_move(position, function () {
+                    smart_move(farm_monster_type, function () {
                         fighting = true;
                     });
                 }, 1000)

@@ -112,50 +112,56 @@ var fighting = false;
 var focus_target = false;
 
 var target = null;
-var hasEmptySpace = false;
-var need_potions = true;
+var hasEmptySpace = true;
+var need_potions = false;
 var doingStuff = false;
 var sellingTrush = false;
 
-setInterval(function () {
-    if (character.rip && !reviving) {
-        reviving = true;
-        fighting = false;
-        var position = {
-            x: character.real_x,
-            y: character.real_y,
-            map: character.map,
-        };
-        setTimeout(function () {
-            respawn();
+smart_move(farm_monster_type, function () {
+    fighting = true;
+    doingStuff = false;
+    
+    setInterval(function () {
+        if (character.rip && !reviving) {
+            reviving = true;
+            fighting = false;
+            var position = {
+                x: character.real_x,
+                y: character.real_y,
+                map: character.map,
+            };
             setTimeout(function () {
-                reviving = false;
-                smart_move(position, function () {
-                    fighting = true;
-                });
-            }, 1000)
-        }, 12000)
-    }
+                respawn();
+                setTimeout(function () {
+                    reviving = false;
+                    smart_move(position, function () {
+                        fighting = true;
+                    });
+                }, 1000)
+            }, 12000)
+        }
+    
+        if(!hasEmptySpace || need_potions) {
+            doStuffInCity();
+            return;
+        }
+    
+        use_potions();
+        loot();
+    
+        if (is_moving(character)) return;
+    
+        target = get_target();
+        if (target) {
+            // if (character.ctype === "mage") mageSkills(target);
+            if (character.ctype === "priest") priestSkills(target);
+            if (character.ctype === "ranger") rangerSkills(target, farm_monster_type);
+            if (character.ctype === "warrior") warriorSkills(target);
+            fight(target);
+        }
+    }, 1000 / 4);
+});
 
-    if(!hasEmptySpace || need_potions) {
-        doStuffInCity();
-        return;
-    }
-
-    use_potions();
-    loot();
-
-    if (is_moving(character)) return;
-
-    target = get_target();
-    if (target) {
-        // if (character.ctype === "mage") mageSkills(target);
-        if (character.ctype === "priest") priestSkills(target);
-        if (character.ctype === "ranger") rangerSkills(target, farm_monster_type);
-        if (character.ctype === "warrior") warriorSkills(target);
-        fight(target);
-    }
-}, 1000 / 4);
 
 
 setInterval(checkInventory, 10000);

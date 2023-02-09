@@ -1,3 +1,4 @@
+const { random } = require("lodash");
 
 const trash_items = [
     "helmet",
@@ -96,27 +97,23 @@ const party = ['FunWarIAm', 'FunStrike', 'Shepart'];
 const leader = party[0];
 
 var reviving = false;
-var farm_monster_type = "crab";
+
+farm_monster_type = 'goo';
+if(character.name == 'FunStrike') {
+    farm_monster_type = "arcticbee";
+} else if(character.name == 'FunRangerOne') {
+    farm_monster_type = "squiq";
+} else if(character.name == 'FunRangerTwo') {
+    farm_monster_type = "croc";
+}
 var fighting = false;
 var focus_target = false;
 
 var target = null;
-
-
-if (character.rip) {
-    setTimeout(function () {
-        respawn();
-        setTimeout(function () {
-            smart_move(farm_monster_type, function () {
-                fighting = true;
-            });
-        }, 1000);
-    }, 12000);
-} else {
-    smart_move(farm_monster_type, function () {
-        fighting = true;
-    });
-}
+var hasEmptySpace = false;
+var need_potions = true;
+var doingStuff = false;
+var sellingTrush = false;
 
 setInterval(function () {
     if (!fighting || is_moving(character)) {
@@ -141,6 +138,11 @@ setInterval(function () {
         }, 12000)
     }
 
+    if(!hasEmptySpace || need_potions) {
+        doStuffInCity();
+        return;
+    }
+
     use_potions();
     loot();
 
@@ -157,6 +159,8 @@ setInterval(function () {
 }, 1000 / 4);
 
 
+setInterval(checkInventory, 10000);
+
 function restoreParty() {
 	if (parent.party_list.length < 3) {
 		initParty();
@@ -169,54 +173,77 @@ function initParty() {
 	}
 }
 
+function doStuffInCity() {
+    fighting = false;
+    if(doingStuff) {
+        if(is_moving(character)) return;
+        if(!sellingTrush) {
+            if(need_potions) {
+                if(quantity('hpot1') < 1000) {
+                    let g = 1000 - quantity('hpot1');
+                    buy_with_gold('hpot1', g);
+                    console.log(`Buy gpot1 ${g}`);
+                }
+                if(quantity('mpot1') < 1000) {
+                    let g = 1000 - quantity('mpot1');
+                    buy_with_gold('mpot1', g);
+                    console.log(`Buy mpot1 ${g}`);
+                }
+                need_potions = false;
+            } else {
+                smart_move('bank', () => {
+                    const g = character.gold;
+                    bank_deposit(character.gold);
+                    console.log(`Deposit to bank ${g}`);
+                    moveToSpot()
+                });
+            }
+        }
+    } else {
+        doingStuff = true;
+        sellingTrush = true;
+        smart_move('main', () => {
+            sellTrash();
+        });
+    }
+}
 
 function sellTrash() {
-    if(character.name == leader) restoreParty();
-
     console.log("Sell trash");
-    let hasEmptySpace = false;
+    let i = 0;
+    let a = setInterval(() => {
+        const item = character.items[i];
+        if (item && trash_items.includes(item.name)) {
+            item.q ? sell(index, item.q) : sell(index, item);
+        }
+        i = i + 1;
+        if(i >= 45) {
+            clearInterval(a);
+            sellingTrush = false;
+        }
+    }, 100);
+}
+
+function checkInventory() {
     character.items.forEach((item, index) => {
         if(item === null) {
             hasEmptySpace = true;
         }
     });
 
-    console.log("has empty space: " + hasEmptySpace);
-
-    if(!hasEmptySpace) {
-        fighting = false;
-        smart_move('main', () => {
-
-            setTimeout(() => {
-                smart_move('bank', () => {
-                    bank_deposit(character.gold);
-                    smart_move(targetMonster, function () {
-                        fighting = true;
-                    });
-                });
-            }, 5000);
-
-            let i = 0;
-            let a = setInterval(() => {
-                const item = character.items[i];
-                if (item && trash_items.includes(item.name)) {
-                    item.q ? sell(index, item.q) : sell(index, item);
-                }
-                i = i + 1;
-                if(i >= 45) {
-                    clearInterval(a);
-                }
-            }, 100);
-
-            // BUY POTIONS
-        })
+    if(locate_item('hpot1') === -1 || locate_item('mpot1') === -1) {
+        need_potions = true;
     }
-
-    setTimeout(60000, sellTrash);
 }
 
-setTimeout(60000, sellTrash);
-
+function moveToSpot() {
+    if(hasEmptySpace && !need_potions) {
+        smart_move(farm_monster_type, function () {
+            fighting = true;
+            doingStuff = false;
+        });
+    }
+}
 
 
 function warriorSkills(target) {

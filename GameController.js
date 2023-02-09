@@ -19,8 +19,8 @@ class GameController {
         return new Promise(async (resolve) => {
             let serverInfo = await this.serverList.getServerInfo(server);
             while (!serverInfo) {
-                console.log(`Unable to find server: ${server}, retrying in 10 seconds`);
-                await sleep(10000);
+                console.log(`Unable to find server: ${server}, retrying in 60 seconds`);
+                await sleep(60000);
                 serverInfo = await this.serverList.getServerInfo(server);
             }
             let botUI = null;

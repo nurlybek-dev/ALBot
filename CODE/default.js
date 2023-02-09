@@ -104,7 +104,7 @@ farm_monster_type = 'goo';
 if(character.name == 'FunStrike') {
     farm_monster_type = "croc";
 } else if(character.name == 'FunRangerOne') {
-    farm_monster_type = "squiq";
+    farm_monster_type = "squig";
 } else if(character.name == 'FunRangerTwo') {
     farm_monster_type = "snake";
 }
@@ -390,10 +390,7 @@ function priestSkills(target) {
 }
 
 function valid_offense_skill(target, mana_reserve) {
-    if (target &&
-        target.level > 1 &&
-        monsters_require_focus.includes(target.mtype) &&
-        character.mp > (character.max_mp * mana_reserve)
+    if (target && character.mp > (character.max_mp * mana_reserve)
     ) return true;
 }
 

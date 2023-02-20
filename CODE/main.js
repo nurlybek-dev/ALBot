@@ -1214,8 +1214,7 @@ function merchantsLuck() {
 
 //If a character is not in the party, reatore it
 function restoreParty() {
-	if (merchantDebugMode) debug("Restoring Party");
-	if (parent.party_list.length < 4) {
+	if (parent.party_list.length < 3) {
 		initParty();
 	}
 }

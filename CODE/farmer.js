@@ -62,8 +62,8 @@ setInterval(function () {
 setInterval(transferLoot, 5000);
 
 function use_potions() {
-    if (can_use("hp") && ((character.hp / character.max_hp <= .50) || (character.max_hp - character.hp > 200)) || 
-		character.mp / character.max_mp <= .50 || (character.max_mp - character.mp > 300)) {
+    if (can_use("hp") && ((character.hp / character.max_hp <= .50) || (character.max_hp - character.hp > 400)) || 
+		character.mp / character.max_mp <= .50 || (character.max_mp - character.mp > 500)) {
 		use_hp_or_mp();
     }
 }

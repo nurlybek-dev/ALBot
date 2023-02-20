@@ -591,7 +591,7 @@ let party = ["FunStrike", "FunRangerOne", "FunrangerTwo"];
 let merchant_name = "Chantme";
 let party_leader = party[0];
 
-let farm_monster_type = "crab";
+let farm_monster_type = monsters_to_hunt[0];
 let monster_index = 0;
 let focus_target = false;
 
@@ -660,24 +660,6 @@ function on_party_invite(name) {
     if (get_player(name) && get_player(name).owner !== character.owner) return;
     accept_party_invite(name);
 }
-
-//Handles "Stacked" Character-Event
-character.on("stacked", (data) => {
-    //If there"s a master, stay close
-    if (monsters_require_focus.includes(farm_monster_type)) {
-        //if (character.name === characterNames[0]) xsmart_move(character.x, character.y + 20);
-        if (character.name === party[1]) xsmart_move(character.x + 40, character.y - 45);
-        if (character.name === party[2]) xsmart_move(character.x - 40, character.y - 45);
-        if (character.name === merchant_name) xsmart_move(character.x, character.y - 80);
-    }
-    //If there is no master, spread the characters around, for better farming efficiency
-    else {
-        //if (character.name === characterNames[0]) xsmart_move(character.x, character.y + 60);
-        if (character.name === party[1]) xsmart_move(character.x + 70, character.y - 60);
-        if (character.name === party[2]) xsmart_move(character.x - 70, character.y - 60);
-        if (character.name === merchant_name) xsmart_move(character.x, character.y - 80);
-    }
-});
 
 function get_target() {
 

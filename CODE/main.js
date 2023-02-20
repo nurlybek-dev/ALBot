@@ -1394,9 +1394,6 @@ else {
 			if (character.ctype === "ranger") rangerSkills(target, farm_monster_type);
 			if (character.ctype === "warrior") warriorSkills(target);
 			fight(target);
-		} else if(!is_moving(character)) {
-            debug("Try to move " + farm_monster_type);
-			smart_move(farm_monster_type);
 		}
 	}, 1000 / 4);
 	
@@ -1416,4 +1413,7 @@ setInterval(function() {
         monster_index = 0;
     }
     farm_monster_type = monsters_to_hunt[monster_index];
+    smart_move(farm_monster_type);
 }, 1000 * 60 * 30)
+
+if(character.ctype != 'merchant') smart_move(farm_monster_type);

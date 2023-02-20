@@ -41,13 +41,7 @@ setInterval(function () {
         }, 12000)
     }
 
-    if (can_use("hp") && (character.hp / character.max_hp <= .50) || (character.max_hp - character.hp > 400)) {
-        use("hp");
-    }
-
-    if (can_use("mp") && character.mp / character.max_mp <= .50 || (character.max_mp - character.mp > 300)) {
-        use("mp");
-    }
+    use_potions();
     loot();
 
     let target;
@@ -64,6 +58,15 @@ setInterval(function () {
         }
     }
 }, 1000 / 4);
+
+setInterval(transferLoot, 5000);
+
+function use_potions() {
+    if (can_use("hp") && ((character.hp / character.max_hp <= .50) || (character.max_hp - character.hp > 200)) || 
+		character.mp / character.max_mp <= .50 || (character.max_mp - character.mp > 300)) {
+		use_hp_or_mp();
+    }
+}
 
 function rangerSkills(target) {
 
@@ -92,4 +95,28 @@ function rangerSkills(target) {
 			}
 		}
 	}
+}
+
+function transferLoot(merchantName) {
+	const merchant = get_player(merchantName);
+	if (character.ctype !== "merchant"
+		&& merchant
+		&& merchant.owner === character.owner
+		&& distance(character, merchant) < 400) {
+		//Transfer Gold
+		if (character.gold > 1000) send_gold(merchant, character.gold)
+		//Transfer Items
+		character.items.forEach((item, index) => {
+			if (item && !keepItems.includes(item.name)) {
+				send_item(merchant, index, 9999);
+			}
+		});
+		//Send spare jackos to the merchant, too [Deactivated: Jackos don't drop from monsters, only from rare candy]
+		//if (locate_item("jacko") !== -1 && locate_item("jacko") !== 40) send_item(merchant, locate_item("jacko"), 9999);
+	}
+}
+
+function on_party_invite(name) {
+    if (get_player(name) && get_player(name).owner !== character.owner) return;
+    accept_party_invite(name);
 }

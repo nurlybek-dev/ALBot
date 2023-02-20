@@ -1,12 +1,561 @@
-const monsters_to_hunt = [
-	"crab", "minimush", "frog",
-	"squigtoad", "osnake", "snake", "rat", "armadillo", "croc",
-	"squig", "poisio", "tortoise", "bat", "goldenbat"
+const upgrade_items = [
+	//Hunter Sets
+	"mchat", "mcgloves", "mcpants", "mcarmor", "mcboots",
+	"mmhat", "mmgloves", "mmpants", "mmarmor", "mmshoes",
+	"mphat", "mpgloves", "mppants", "mparmor", "mpshoes",
+	"mphat", "mpgloves", "mppants", "mparmor", "mpshoes",
+	"mrnhat", "mrngloves", "mrnpants", "mrnarmor", "mrnboots",
 ];
 
-const special_monsters = ["hen", "rooster", "cutebee", "goldenbat", "wabbit"];
+const craft_items = [
+	"rod", 
+	"ctristone", 
+	"firebow", 
+	"frostbow", 
+	"fierygloves", 
+	"wingedboots", 
+	"elixirdex1", 
+	"elixirdex2", 
+	"elixirint1", 
+	"elixirint2",
+	"elixirvit1", 
+	"elixirvit2", 
+	"xbox", 
+	"basketofeggs"
+];
 
-const monsters_require_focus = [];
+const dismantle_items = [
+	// "fireblade", "daggerofthedead", "swordofthedead", "spearofthedead", "goldenegg"
+];
+
+const trash_items = [
+    // HELMETS
+        "helmet",
+        "wcap",
+        "partyhat",
+        "xmashat",
+        "rednose",
+        "helmet1",
+        "bunnyears",
+        "eears",
+        // "gphelmet",
+        // "mphat",
+        // "mmhat",
+        // "mwhelmet",
+        // "mrnhat",
+        // "mrhood",
+        // "mchat",
+        // "phelmet",
+        "ghatb",
+        "ghatp",
+        // "cyber",
+        // "hhelmet",
+        // "tigerhelmet",
+        // "xhelmet",
+        // "fury",
+        // "oxhelmet",
+    
+    // ARMORS
+        "tshirt1",
+        // "tshirt3",
+        // "tshirt8",
+        // "tshirt9",
+        "tshirt2",
+        "tshirt0",
+        // "tshirt7",
+        // "tshirt6",
+        // "tshirt4",
+        // "tshirt88",
+        "coat",
+        "wattire",
+        "xmassweater",
+        "epyjamas",
+        "coat1",
+        // "mwarmor",
+        // "mrnarmor",
+        // "mmarmor",
+        // "mrarmor",
+        // "mcarmor",
+        // "mparmor",
+        // "luckyt",
+        "sweaterhs",
+        "pyjamas",
+        "harmor",
+        // "mcape",
+        // "xarmor",
+        // "vattire",
+        // "cdragon",
+        // "warpvest",
+    
+    // UNDERARMORS
+        "pants",
+        "wbreeches",
+        "xmaspants",
+        "pants1",
+        // "mmpants",
+        // "mcpants",
+        // "mppants",
+        // "mwpants",
+        // "mrpants",
+        // "mrnpants",
+        // "frankypants",
+        "hpants",
+        // "fallen",
+        // "starkillers",
+        // "xpants",
+    
+    // GLOVES
+        "gloves",
+        "wgloves",
+        "poker",
+        "gloves1",
+        "mittens",
+        // "mcgloves",
+        // "mwgloves",
+        // "mpgloves",
+        // "mmgloves",
+        // "mrgloves",
+        // "mrngloves",
+        // "fierygloves",
+        "hgloves",
+        // "vgloves",
+        // "supermittens",
+        // "handofmidas",
+        // "powerglove",
+        // "xgloves",
+        // "goldenpowerglove",
+        // "mpxgloves",
+    
+    // SHOES
+        "shoes",
+        "eslippers",
+        "wshoes",
+        "xmasshoes",
+        "shoes1",
+        // "wingedboots",
+        // "mcboots",
+        // "mmshoes",
+        // "mrboots",
+        // "mpshoes",
+        // "mrnboots",
+        // "mwboots",
+        // "vboots",
+        // "snowboots",
+        "iceskates",
+        "hboots",
+        // "xboots",
+    
+    // CAPES
+        // "gcape",
+        // "cape",
+        // "ecape",
+        // "angelwings",
+        // "vcape",
+        // "stealthcape",
+        // "bcape",
+        // "tigercape",
+        // "fcape",
+    
+    // RINGS
+        // "dexring",
+        // "ringsj",
+        // "intring",
+        // "vitring",
+        // "strring",
+        // "cdarktristone",
+        // "ctristone",
+        // "armorring",
+        // "resistancering",
+        // "cring",
+        // "solitaire",
+        // "suckerpunch",
+        // "vring",
+        // "zapper",
+        // "ringofluck",
+        // "trigger",
+        // "ringhs",
+        // "goldring",
+    
+    // EARRINGS
+        // "strearring",
+        // "dexearring",
+        // "intearring",
+        // "vitearring",
+        // "dexearringx",
+        // "lostearring",
+        // "cearring",
+        // "molesteeth",
+        // "mearring",
+    
+    // AMULETS
+        "hpamulet",
+        // "warmscarf",
+        // "dexamulet",
+        // "skullamulet",
+        // "intamulet",
+        // "stramulet",
+        // "t2dexamulet",
+        // "t2stramulet",
+        // "t2intamulet",
+        // "spookyamulet",
+        // "snring",
+        // "bfangamulet",
+        // "amuletofm",
+        // "sanguine",
+        // "mpxamulet",
+        // "northstar",
+    
+    // BELTS
+        "hpbelt",
+        // "lbelt",
+        // "dexbelt",
+        // "strbelt",
+        // "intbelt",
+        // "mbelt",
+        // "santasbelt",
+        // "sbelt",
+        // "mpxbelt",
+    
+    // ORBS
+        // "test_orb",
+        // "orbg",
+        // "jacko",
+        // "ftrinket",
+        // "talkingskull",
+        // "rabbitsfoot",
+        // "charmer",
+        // "orbofsc",
+        // "orbofdex",
+        // "orbofint",
+        // "orbofvit",
+        // "orbofstr",
+        // "tigerstone",
+        // "vorb",
+    
+    // WEAPONS
+        "broom",
+        "mace",
+        "wbasher",
+        "claw",
+        "blade",
+        "cclaw",
+        // "staff",
+        "stinger",
+        // "hbow",
+        "bow",
+        "glolipop",
+        "ololipop",
+        "mushroomstaff",
+        "slimestaff",
+        "pouchbow",
+        "weaver",
+        "xmace",
+        "sword",
+        "swifty",
+        "wand",
+        "throwingstars",
+        // "fclaw",
+        "spear",
+        "candycanesword",
+        // "fsword",
+        "basher",
+        // "frostbow",
+        // "t2bow",
+        "rapier",
+        "pmace",
+        "cupid",
+        "snowflakes",
+        "carrotsword",
+        // "fireblade",
+        "ornamentstaff",
+        "merry",
+        "bataxe",
+        "pinkie",
+        "dagger",
+        // "firebow",
+        // "firestaff",
+        "swordofthedead",
+        "daggerofthedead",
+        // "woodensword",
+        "maceofthedead",
+        "staffofthedead",
+        "bowofthedead",
+        // "harbringer",
+        // "oozingterror",
+        // "froststaff",
+        // "firestars",
+        "crossbow",
+        // "spearofthedead",
+        // "harpybow",
+        // "t3bow",
+        "pmaceofthedead",
+        // "lmace",
+        // "hammer",
+        // "gstaff",
+        // "hdagger",
+        // "dragondagger",
+        // "gbow",
+        // "scythe",
+        // "vsword",
+        // "vdagger",
+        // "vstaff",
+        // "vhammer",
+        // "heartwood",
+        // "dartgun",
+        // "wblade",
+    
+    // SHILDS
+        "wshield",
+        // "shield",
+        // "sshield",
+        // "tigershield",
+        // "xshield",
+        // "mshield",
+    
+    // OFFHANDS
+        "wbook0",
+        // "quiver",
+        // "lantern",
+        // "wbookhs",
+        // "wbook1",
+        // "t2quiver",
+        // "exoarm",
+    
+    // ELIXIRS
+        // "xshot",
+        // "gum",
+        // "cake",
+        // "candypop",
+        // "pumpkinspice",
+        // "elixirstr0",
+        // "elixirint0",
+        // "eggnog",
+        // "elixirvit0",
+        // "elixirdex0",
+        // "bunnyelixir",
+        // "hotchocolate",
+        // "greenbomb",
+        // "swirlipop",
+        // "espresso",
+        // "elixirvit1",
+        // "elixirstr1",
+        // "elixirdex1",
+        // "elixirint1",
+        // "ale",
+        // "wine",
+        // "whiskey",
+        // "elixirvit2",
+        // "elixirstr2",
+        // "elixirdex2",
+        // "elixirint2",
+        // "blue",
+        // "pico",
+        // "vblood",
+        // "elixirpnres",
+        // "elixirluck",
+        // "elixirfzres",
+        // "elixirfires",
+    
+    // POTIONS
+        "hpot0",
+        "mpot0",
+        // "hpot1",
+        // "mpot1",
+        // "snakeoil",
+        // "hpotx",
+        // "mpotx",
+    
+    // SCROLLS
+        // "scroll0",
+        // "cscroll0",
+        // "evasionscroll",
+        // "outputscroll",
+        // "strscroll",
+        // "critscroll",
+        // "goldscroll",
+        // "lifestealscroll",
+        // "forscroll",
+        // "intscroll",
+        // "apiercingscroll",
+        // "armorscroll",
+        // "resistancescroll",
+        // "mpcostscroll",
+        // "xpscroll",
+        // "reflectionscroll",
+        // "manastealscroll",
+        // "frequencyscroll",
+        // "rpiercingscroll",
+        // "dreturnscroll",
+        "vitscroll",
+        // "speedscroll",
+        // "dexscroll",
+        // "luckscroll",
+        // "scroll1",
+        // "cscroll1",
+        // "offeringp",
+        // "scroll2",
+        // "cscroll2",
+        // "offering",
+        // "offeringx",
+        // "scroll3",
+        // "scroll4",
+        // "cscroll3",
+    
+    // Crafting and Collecting
+        // "essenceoflife",
+        // "rattail",
+        "frogt",
+        // "carrot",
+        "pstem",
+        "whiteegg",
+        // "bfur",
+        // "electronics",
+        // "essenceofgreed",
+        // "mbones",
+        "gslime",
+        "beewings",
+        // "bandages",
+        // "rfur",
+        // "smush",
+        // "dstones",
+        "crabclaw",
+        // "bwing",
+        "spores",
+        // "lspores",
+        // "cscale",
+        // "cocoon",
+        // "spidersilk",
+        // "pleather",
+        // "drapes",
+        // "ascale",
+        // "feather0",
+        // "feather1",
+        // "brownegg",
+        // "snakefang",
+        // "tshell",
+        // "bronzenugget",
+        // "sstinger",
+        // "essenceofnature",
+        // "ink",
+        "lotusf",
+        // "emptyheart",
+        // "rfangs",
+        // "svenom",
+        // "bfang",
+        // "cshell",
+        // "essenceoffire",
+        // "bronzeingot",
+        // "essenceofether",
+        // "essenceoffrost",
+        // "btusk",
+        // "ectoplasm",
+        // "goldnugget",
+        // "trinkets",
+        // "ijx",
+        "bcandle",
+        // "watercore",
+        // "goldingot",
+        // "platinumnugget",
+        // "nheart",
+        // "networkcard",
+        // "platinumingot",
+    
+    // Exchangeables
+        // "5bucks",
+        // "gift1",
+        // "seashell",
+        // "gift0",
+        // "leather",
+        // "ornament",
+        // "troll",
+        // "basketofeggs",
+        // "mistletoe",
+        // "candycane",
+        // "candy1",
+        // "gem1",
+        // "greenenvelope",
+        // "redenvelopev2",
+        // "redenvelopev3",
+        // "redenvelopev4",
+        // "redenvelope",
+        // "gemfragment",
+        // "goldenegg",
+        // "armorbox",
+        // "bugbountybox",
+        // "candy0",
+        // "gem0",
+        // "weaponbox",
+        // "xbox",
+        // "cosmo2",
+        // "cosmo0",
+        // "mysterybox",
+        // "cosmo3",
+    
+    // KEYS
+        // "frozenkey",
+        // "cryptkey",
+        // "stonekey",
+        // "tombkey",
+        // "bkey",
+        // "ukey",
+        // "dkey",
+    
+    // OTHERS
+        // "emptyjar",
+        // "cxjar",
+        // "snowball",
+        // "emotionjar",
+        // "coal",
+        // "tracker",
+        // "confetti",
+        "smoke",
+        // "firecrackers",
+        // "shadowstone",
+        // "poison",
+        // "rod",
+        // "pickaxe",
+        // "x2",
+        // "x0",
+        // "x7",
+        // "x5",
+        // "egg3",
+        // "egg5",
+        // "egg0",
+        // "egg2",
+        // "egg4",
+        // "egg6",
+        // "x3",
+        // "x1",
+        // "x6",
+        // "x4",
+        // "egg8",
+        // "egg1",
+        // "egg7",
+        // "x8",
+        // "puppyer",
+        // "funtoken",
+        // "monstertoken",
+        // "frozenstone",
+        // "pvptoken",
+        // "friendtoken",
+        // "stand0",
+        // "stick",
+        // "gem2",
+        // "fieldgen0",
+        // "xptome",
+        // "gem3",
+        // "qubics",
+        // "bottleofxp",
+        // "cosmo1",
+        // "licence",
+        // "cosmo4",
+        // "supercomputer",
+        // "computer",
+        // "goldbooster",
+        // "xpbooster",
+        // "luckbooster",
+        // "flute",
+];
 
 const keepItems = [
 	//Items
@@ -26,68 +575,7 @@ const keepItems = [
 	"elixirluck"
 ];
 
-/* PARTY */
-let play_char = "Chantme";
 let party = ["FunStrike", "FunRangerOne", "FunrangerTwo"];
-let merchant_name = "Chantme";
-let party_leader = party[0];
-
-let farm_monster_type = monsters_to_hunt[0];
-let monster_index = 0;
-let focus_target = false;
-
-function start() {
-    if (character.name == merchant_name) {
-        for (i in party) {
-			start_character(party[i], "main");
-        }
-    }
-}
-
-function stop() {
-	if (character.name == merchant_name) {
-        for (i in party) {
-			stop_character(party[i], "main");
-        }
-    }
-}
-
-//If a characters Health / Mana Potions are exhausted,
-//it will request some from other Party-Members
-function requestPotions() {
-	if (character.ctype === "merchant") return;
-	const potions = ["hpot1", "mpot1"];
-	let recipients = [];
-	let neededPotions = [];
-	for (member of parent.party_list) if (member !== character.name && member !== merchant_name) recipients.push(member);
-	for (potion of potions) if (locate_item(potion) === -1) neededPotions.push(potion);
-	if (neededPotions.length) {
-		send_cm(recipients, {
-			message: "needPotions",
-			potions: neededPotions
-		});
-	}
-}
-
-function transferLoot(merchantName) {
-	if (character.ctype === "merchant") return;
-	const merchant = get_player(merchantName);
-	if (character.ctype !== "merchant"
-		&& merchant
-		&& merchant.owner === character.owner
-		&& distance(character, merchant) < 400) {
-		//Transfer Gold
-		if (character.gold > 1000) send_gold(merchant, character.gold)
-		//Transfer Items
-		character.items.forEach((item, index) => {
-			if (item && !keepItems.includes(item.name)) {
-				send_item(merchant, index, 9999);
-			}
-		});
-		//Send spare jackos to the merchant, too [Deactivated: Jackos don't drop from monsters, only from rare candy]
-		//if (locate_item("jacko") !== -1 && locate_item("jacko") !== 40) send_item(merchant, locate_item("jacko"), 9999);
-	}
-}
 
 function use_potions() {
     if (can_use("hp") && ((character.hp / character.max_hp <= .50) || (character.max_hp - character.hp > 200)) || 
@@ -96,107 +584,26 @@ function use_potions() {
     }
 }
 
-//on_party_invite gets called _automatically_ by the game on an Invite-Event 
-function on_party_invite(name) {
-    if (get_player(name) && get_player(name).owner !== character.owner) return;
-    accept_party_invite(name);
-}
-
-function get_target() {
-
-    if(target && parent.entities[target] && valid_target(parent.entities[target])) {
-        return target;
-    } else {
-        change_target(null);
-    }
-
-    if ((!focus_target || character.name == party_leader) || (focus_target && !(get_player(party_leader)))) {
-        //Looks for special monsters
-        target = Object.values(parent.entities).filter(entity => special_monsters.includes(entity.mtype))[0];
-        if (valid_target(target)) {
-            change_target(target);
-            return target;
-        }
-        //Returns any monster that targets nobody
-        target = get_nearest_monster({
-            type: farm_monster_type,
-            no_target: true
-        });
-        if (valid_target(target)) {
-            change_target(target);
-            return target;
-        }
-    } else if (focus_target && get_player(party_leader) && get_player(party_leader).target) {
-        target = parent.entities[get_player(party_leader).target];
-        if (valid_target(target)) {
-            change_target(target);
-            return target;
-        }
-    }  else {
-        change_target(null);
-        return null;
-    }
-}
-
-function valid_target(target) {
-    if (target && target !== null && !target.dead && target.visible && parent.entities[target.id] &&
-        (monsters_to_hunt.includes(target.mtype) || special_monsters.includes(target.mtype))) {
-        return true;
-    } else {
-        return false;
-    }
-}
-
-//Only use skill when necessary
-function valid_offense_skill(target, mana_reserve) {
-    if (target &&
-        target.level > 1 &&
-        monsters_require_focus.includes(target.mtype) &&
-        character.mp > (character.max_mp * mana_reserve)
-    ) return true;
-}
-
-function fight(target) {
-    if (can_attack(target) && !is_on_cooldown("attack")) {
-        attack(target);
-    } else {
-        let dist = Math.sqrt(Math.pow(target.real_x - character.real_x, 2) + Math.pow(target.real_y - character.real_y, 2))
-        if (dist > character.range - 20)
-            move((target.real_x + character.real_x) / 2, (target.real_y + character.real_y) / 2);
-    }
-}
-
-
 function initParty() {
 	for (const name of party) {
 		if (!Object.keys(parent.party).includes(name)) send_party_invite(name);
 	}
 }
 
-//Handles all incoming CodeMessages
-function on_cm(name, data) {
-    if (get_player(name) && get_player(name).owner === character.owner) {
-
-        //Handles all CM's
-        if (data.message === "needPotions") sendPotion(name, data);
+setInterval(function() {
+		
+    if (character.rip) {
+        setTimeout(respawn, 15000);
+        return;
     }
-}
-  
-//Sends Health Potions to Partymembers
-function sendPotion(name, data) {
-    if (character.ctype === "merchant") return;
-    for (potion of data.potions) if (locate_item(potion) !== -1 && quantity(potion) >= 2) send_item(name, locate_item(potion), Math.floor(quantity(potion) / 2));
-    log(`Got cm from ${name} requesting ${data.potions}`, "red")
-}
 
-/**
- * log
- * error
- * success
- */
-function debug(message) {
-	console.log(`${character.name}: ${message}`);
-}
+    use_potions();
+    loot();
+    merchantSkills();
+
+}, 5000);
+
+
 //Debug mode - Set to True for extensive Logs
 const merchantDebugMode = false;
 
@@ -226,6 +633,8 @@ const maxCompoundLevel = 5;
 const maxUpgradeLevel = 5;
 
 let merchant_state = 'idle';
+let visitBank = false;
+let _exchange = false;
 
 
 function merchantSkills() {
@@ -241,11 +650,26 @@ function merchantSkills() {
 		return;
 	}
 
+	if(_exchange) {
+		if(exchangeGemsQuests('check')) {
+			const npc = find_npc(locateGems("findNpc"));
+			if(distance(character, npc) > 1) {
+				smart_move(npc, () => {
+					exchangeGemsQuests();
+				});
+			} else {
+				exchangeGemsQuests();
+			}
+			return;
+		}
+		_exchange = false;
+	}
+
     //Functions only used on "main" map
     if (character.map === "main" && Math.abs(character.real_x) < 20 && Math.abs(character.real_y) < 20 && !is_moving(character)) {
-		debug("In main");
         //Sell unwanted items
         sellTrash();
+		buyPotions();
 
         //Upgrade items
         if(upgradeItems()) return;
@@ -254,12 +678,12 @@ function merchantSkills() {
 			smart_move("scrolls", () => {
 				buyScrolls("buy");
 			});
+			return;
         }
 
         //Compound items
         for (let i = 0; i < maxCompoundLevel; i++) {
-			if (findTriple(i)) {
-				compoundItems(i);
+			if (findTriple(i) && compoundItems(i)) {
 				return;
 			}	
 		}
@@ -277,13 +701,36 @@ function merchantSkills() {
 			} else {
 				exchangeGemsQuests();
 			}
+			_exchange = true;
 			return;
 		}
 
+		buyCheapStuff();
+		if(!visitBank) {
+			smart_move("bank", () => {
+				depositGold();
+				depositSelectedItems();
+				setTimeout(function() {
+					smart_move("main", () => {
+						merchant_state = "idle";
+					});
+				}, 5000);
+			});
+			visitBank = true;
+		}
+
 		openMerchantStand();
-    } else if(!is_moving(character) && merchant_state == 'idle') {
-		debug("Not in main");
-		smart_move("main");
+    } else if(!is_moving(character)) {
+		if(merchant_state == 'idle') {
+			smart_move("main");
+		}
+		if(merchant_state == 'visit') {
+			relocateItems();
+			transferPotions();
+			merchantsLuck();
+			merchant_state = 'idle';
+			smart_move("main");
+		}
 	}
 
 	//Visit farm-party every 10 minutes.
@@ -291,38 +738,8 @@ function merchantSkills() {
 	//and store gold and good items in bank
 	if (new Date().getMinutes() % 10 === 0) {
 		merchant_state = "visit";
-        smart_move(farm_monster_type, () => {
-            smart_move("main", () => {
-                buyPotions();
-                relocateItems();
-                let boundary = farming_spot.monster.boundary;
-    
-                let spot_center_x = Math.floor(boundary[0] + ((boundary[2] - boundary[0]) / 2));
-                let spot_center_y = Math.floor(boundary[1] + ((boundary[3] - boundary[1]) / 2));
-    
-                let pos = {
-                    map: farming_spot.map,
-                    x: spot_center_x,
-                    y: spot_center_y
-                };
-    
-                smart_move(pos, () => {
-                    transferPotions();
-                    merchantsLuck();
-                    setTimeout(function() {
-                        smart_move("bank", () => {
-                            depositGold();
-                            depositSelectedItems();
-                            setTimeout(function() {
-                                smart_move("main", () => {
-                                    merchant_state = "idle";
-                                });
-                            }, 5000);
-                        });
-                    }, 5000)
-                });
-            });
-        });
+		visitBank = false;
+		smart_move('crab');
 	}
 }
 
@@ -723,122 +1140,3 @@ function retrieveFromBank(item) {
 		}
 	}
 }
-
-function rangerSkills(target) {
-
-	//How much Mana should be kept in reserve
-	const mana_reserve = 0.8;
-
-	
-	//Use Ranger Skills
-	if (character.mp > (character.max_mp * mana_reserve)) {
-
-		//Multishots (3-Shot and 5-Shot)
-		//ONLY if there is no master!
-		if (!focus_target
-			&& !is_on_cooldown("attack")
-			//Only use these skills against weak monsters
-			&& !monsters_require_focus.includes(farm_monster_type)) {
-			const targets = Object.values(parent.entities).filter(entity => entity.mtype === farm_monster_type && entity.level <= 1 && is_in_range(entity, "3shot") && is_in_range(entity, "5shot"));
-			if (character.level >= 75
-				&& targets.length >= 5
-				&& !is_on_cooldown("5shot")
-				&& character.mp > G.skills["5shot"].mp) {
-				use_skill("5shot", targets);
-				debug("Used 5-Shot");
-			}
-			else if (character.level >= 60
-				&& targets.length >= 3
-				&& !is_on_cooldown("3shot")
-				&& character.mp > G.skills["3shot"].mp) {
-				use_skill("3shot", targets);
-				debug("Used 3-Shot");
-			}
-		}
-
-		//Piercingshot
-		if (character.level >= 72
-			&& valid_offense_skill(target, mana_reserve)
-			&& target.armor > 0
-			&& character.mp > G.skills.piercingshot.mp
-			&& is_in_range(target, "piercingshot")
-			&& !is_on_cooldown("piercingshot")) {
-			use_skill("piercingshot");
-			debug("Used Piercingshot");
-		}
-		//Hunters Mark
-		if (valid_offense_skill(target, mana_reserve)
-			&& character.mp > G.skills.huntersmark.mp
-			&& is_in_range(target, "huntersmark")
-			&& !is_on_cooldown("huntersmark")) {
-			use_skill("huntersmark");
-			debug("Used Hunters Mark");
-		}
-		//Supershot
-		if (valid_offense_skill(target, mana_reserve)
-			&& character.mp > G.skills.supershot.mp
-			&& is_in_range(target, "supershot")
-			&& !is_on_cooldown("supershot")) {
-			use_skill("supershot");
-			debug("Used Supershot");
-		}
-	}
-}
-
-let target = null;
-
-if(character.ctype == 'merchant') {
-	setInterval(function() {
-		
-		if (character.rip) {
-			setTimeout(respawn, 15000);
-			return;
-		}
-
-		use_potions();
-		loot();
-		merchantSkills();
-
-	}, 5000);
-}
-else {
-	setInterval(function () {
-		if (character.rip) return;
-	
-		use_potions();
-		loot();
-
-        if(is_moving(character)) return;
-
-		target = get_target();
-		if (target) {
-			// if (character.ctype === "mage") mageSkills(target);
-			if (character.ctype === "priest") priestSkills(target);
-			if (character.ctype === "ranger") rangerSkills(target, farm_monster_type);
-			if (character.ctype === "warrior") warriorSkills(target);
-			fight(target);
-		}
-	}, 1000 / 4);
-	
-	setInterval(function() {
-		if (character.rip) {
-            respawn();
-            return;
-        };
-		requestPotions();
-		transferLoot(merchant_name);
-	}, 5000);
-
-    setInterval(function() {
-        if(!is_moving(character) && !target) smart_move(farm_monster_type);
-    }, 30000);
-}
-
-setInterval(function() {
-    monster_index++;
-    if(monster_index >= monsters_to_hunt.length) {
-        monster_index = 0;
-    }
-    farm_monster_type = monsters_to_hunt[monster_index];
-    smart_move(farm_monster_type);
-}, 1000 * 60 * 30)

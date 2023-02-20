@@ -641,7 +641,6 @@ function transferLoot(merchantName) {
 		character.items.forEach((item, index) => {
 			if (item && !keepItems.includes(item.name)) {
 				send_item(merchant, index, 9999);
-				debug("Sent items to merchant.");
 			}
 		});
 		//Send spare jackos to the merchant, too [Deactivated: Jackos don't drop from monsters, only from rare candy]
@@ -773,7 +772,7 @@ function sendPotion(name, data) {
  * success
  */
 function debug(message) {
-	console.log(`${character.name}: ${message}`);
+	// console.log(`${character.name}: ${message}`);
 }
 //Debug mode - Set to True for extensive Logs
 const merchantDebugMode = true;
@@ -1396,6 +1395,7 @@ else {
 			if (character.ctype === "warrior") warriorSkills(target);
 			fight(target);
 		} else if(!is_moving(character)) {
+            console.log("Try to move " + farm_monster_type);
 			smart_move(farm_monster_type);
 		}
 	}, 1000 / 4);

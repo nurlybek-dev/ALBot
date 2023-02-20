@@ -1416,4 +1416,8 @@ setInterval(function() {
     smart_move(farm_monster_type);
 }, 1000 * 60 * 30)
 
-if(character.ctype != 'merchant') smart_move(farm_monster_type);
+if(character.ctype != 'merchant') {
+    smart_move('main', () => {
+        smart_move(farm_monster_type);
+    });
+}

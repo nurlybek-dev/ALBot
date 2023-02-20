@@ -772,10 +772,10 @@ function sendPotion(name, data) {
  * success
  */
 function debug(message) {
-	// console.log(`${character.name}: ${message}`);
+	console.log(`${character.name}: ${message}`);
 }
 //Debug mode - Set to True for extensive Logs
-const merchantDebugMode = true;
+const merchantDebugMode = false;
 
 //Money in pocked [Used to buy Potions, Scrolls and cheap Items]
 const reserveMoney = 1000000;
@@ -1395,7 +1395,7 @@ else {
 			if (character.ctype === "warrior") warriorSkills(target);
 			fight(target);
 		} else if(!is_moving(character)) {
-            console.log("Try to move " + farm_monster_type);
+            debug("Try to move " + farm_monster_type);
 			smart_move(farm_monster_type);
 		}
 	}, 1000 / 4);

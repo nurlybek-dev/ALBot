@@ -1,5 +1,5 @@
 const monsters_to_hunt = [
-	"crab", "bee", "minimush", "frog",
+	"crab", "minimush", "frog",
 	"squigtoad", "osnake", "snake", "rat", "armadillo", "croc",
 	"squig", "poisio", "tortoise", "bat", "goldenbat"
 ];
@@ -610,8 +610,6 @@ function stop() {
         }
     }
 }
-
-start();
 
 //If a characters Health / Mana Potions are exhausted,
 //it will request some from other Party-Members

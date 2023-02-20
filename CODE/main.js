@@ -721,7 +721,7 @@ function fight(target) {
     } else {
         let dist = Math.sqrt(Math.pow(target.real_x - character.real_x, 2) + Math.pow(target.real_y - character.real_y, 2))
         if (dist > character.range - 20)
-            smart_move((target.real_x + character.real_x) / 2, (target.real_y + character.real_y) / 2);
+            move((target.real_x + character.real_x) / 2, (target.real_y + character.real_y) / 2);
     }
 }
 

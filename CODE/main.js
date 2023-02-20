@@ -1366,8 +1366,6 @@ function rangerSkills(target) {
 
 let target = null;
 
-start();
-
 if(character.ctype == 'merchant') {
 	setInterval(function() {
 		

@@ -704,8 +704,7 @@ function merchantSkills() {
 			_exchange = true;
 			return;
 		}
-
-		buyCheapStuff();
+        
 		if(!visitBank) {
 			smart_move("bank", () => {
 				depositGold();

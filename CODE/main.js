@@ -598,7 +598,7 @@ let focus_target = false;
 function start() {
     if (character.name == merchant_name) {
         for (i in party) {
-			start_character(party[i], "Chantme");
+			start_character(party[i], "main");
         }
     }
 }
@@ -610,6 +610,8 @@ function stop() {
         }
     }
 }
+
+start();
 
 //If a characters Health / Mana Potions are exhausted,
 //it will request some from other Party-Members

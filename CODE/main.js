@@ -1,53 +1,12 @@
-const available_maps = [
-	"main",
-	"woffice",
-	"tunnel",
-	"bank",
-	"cave",
-	"arena",
-	"tavern",
-	"mansion",
-	"level1",
-	"hut",
-	"halloween",
-	"mtunnel",
-	"test",
-	"cyberland",
-	"winterland",
-	"desertland",
-	"resort_e",
-	"level2",
-	"spookytown",
-	"winter_inn",
-	"winter_cave",
-	"level2n",
-	"level2s",
-	"level3",
-	"level2e",
-	"level2w",
-	"winter_inn_rooms",
-	"level4"
-];
-
 const monsters_to_hunt = [
-	"hen", "rooster", "goo", "crab", "bee", "cutebee", "minimush", "frog",
+	"crab", "bee", "minimush", "frog",
 	"squigtoad", "osnake", "snake", "rat", "armadillo", "croc",
-	"squig", "poisio", "snowman", "arcticbee",
-	"spider", "tortoise", "bat", "goldenbat", "wabbit", "scorpion", "gscorpion",
-	"iceroamer", "crabx", "bbpompom",
+	"squig", "poisio", "tortoise", "bat", "goldenbat"
 ];
 
-const monsters_require_focus = [
-	"snowman", "scorpion", "gscorpion", "stoneworm",
-	"goldenbat", "iceroamer", "crabx", "jr", "greenjr",
-	"bbpompom", "booboo", "prat", "boar", "ghost", "mummy",
-	"mole", "wolfie", "wolf", "xscorpion", "bigbird",
-    "bat", "wabbit", "phoenix", "fvampire", "mvampire", "grinch"
-];
+const special_monsters = ["hen", "rooster", "cutebee", "goldenbat", "wabbit"];
 
-const event_monsters = ["wabbit", "snowman"];
-
-const special_monsters = ["cutebee", "snowman", "goldenbat", "wabbit", "phoenix", "fvampire", "mvampire", "grinch"];
+const monsters_require_focus = [];
 
 const keepItems = [
 	//Items
@@ -97,535 +56,6 @@ const dismantle_items = [
 	// "fireblade", "daggerofthedead", "swordofthedead", "spearofthedead", "goldenegg"
 ];
 
-const items = [
-// HELMETS
-    "helmet",
-    "wcap",
-    "partyhat",
-    "xmashat",
-    "rednose",
-    "helmet1",
-    "bunnyears",
-    "eears",
-    "gphelmet",
-    "mphat",
-    "mmhat",
-    "mwhelmet",
-    "mrnhat",
-    "mrhood",
-    "mchat",
-    "phelmet",
-    "ghatb",
-    "ghatp",
-    "cyber",
-    "hhelmet",
-    "tigerhelmet",
-    "xhelmet",
-    "fury",
-    "oxhelmet",
-
-// ARMORS
-    "tshirt1",
-    "tshirt3",
-    "tshirt8",
-    "tshirt9",
-    "tshirt2",
-    "tshirt0",
-    "tshirt7",
-    "tshirt6",
-    "tshirt4",
-    "tshirt88",
-    "coat",
-    "wattire",
-    "xmassweater",
-    "epyjamas",
-    "coat1",
-    "mwarmor",
-    "mrnarmor",
-    "mmarmor",
-    "mrarmor",
-    "mcarmor",
-    "mparmor",
-    "luckyt",
-    "sweaterhs",
-    "pyjamas",
-    "harmor",
-    "mcape",
-    "xarmor",
-    "vattire",
-    "cdragon",
-    "warpvest",
-
-// UNDERARMORS
-    "pants",
-    "wbreeches",
-    "xmaspants",
-    "pants1",
-    "mmpants",
-    "mcpants",
-    "mppants",
-    "mwpants",
-    "mrpants",
-    "mrnpants",
-    "frankypants",
-    "hpants",
-    "fallen",
-    "starkillers",
-    "xpants",
-
-// GLOVES
-    "gloves",
-    "wgloves",
-    "poker",
-    "gloves1",
-    "mittens",
-    "mcgloves",
-    "mwgloves",
-    "mpgloves",
-    "mmgloves",
-    "mrgloves",
-    "mrngloves",
-    "fierygloves",
-    "hgloves",
-    "vgloves",
-    "supermittens",
-    "handofmidas",
-    "powerglove",
-    "xgloves",
-    "goldenpowerglove",
-    "mpxgloves",
-
-// SHOES
-    "shoes",
-    "eslippers",
-    "wshoes",
-    "xmasshoes",
-    "shoes1",
-    "wingedboots",
-    "mcboots",
-    "mmshoes",
-    "mrboots",
-    "mpshoes",
-    "mrnboots",
-    "mwboots",
-    "vboots",
-    "snowboots",
-    "iceskates",
-    "hboots",
-    "xboots",
-
-// CAPES
-    "gcape",
-    "cape",
-    "ecape",
-    "angelwings",
-    "vcape",
-    "stealthcape",
-    "bcape",
-    "tigercape",
-    "fcape",
-
-// RINGS
-    "dexring",
-    "ringsj",
-    "intring",
-    "vitring",
-    "strring",
-    "cdarktristone",
-    "ctristone",
-    "armorring",
-    "resistancering",
-    "cring",
-    "solitaire",
-    "suckerpunch",
-    "vring",
-    "zapper",
-    "ringofluck",
-    "trigger",
-    "ringhs",
-    "goldring",
-
-// EARRINGS
-    "strearring",
-    "dexearring",
-    "intearring",
-    "vitearring",
-    "dexearringx",
-    "lostearring",
-    "cearring",
-    "molesteeth",
-    "mearring",
-
-// AMULETS
-    "hpamulet",
-    "warmscarf",
-    "dexamulet",
-    "skullamulet",
-    "intamulet",
-    "stramulet",
-    "t2dexamulet",
-    "t2stramulet",
-    "t2intamulet",
-    "spookyamulet",
-    "snring",
-    "bfangamulet",
-    "amuletofm",
-    "sanguine",
-    "mpxamulet",
-    "northstar",
-
-// BELTS
-    "hpbelt",
-    "lbelt",
-    "dexbelt",
-    "strbelt",
-    "intbelt",
-    "mbelt",
-    "santasbelt",
-    "sbelt",
-    "mpxbelt",
-
-// ORBS
-    "test_orb",
-    "orbg",
-    "jacko",
-    "ftrinket",
-    "talkingskull",
-    "rabbitsfoot",
-    "charmer",
-    "orbofsc",
-    "orbofdex",
-    "orbofint",
-    "orbofvit",
-    "orbofstr",
-    "tigerstone",
-    "vorb",
-
-// WEAPONS
-    "broom",
-    "mace",
-    "wbasher",
-    "claw",
-    "blade",
-    "cclaw",
-    "staff",
-    "stinger",
-    "hbow",
-    "bow",
-    "glolipop",
-    "ololipop",
-    "mushroomstaff",
-    "slimestaff",
-    "pouchbow",
-    "weaver",
-    "xmace",
-    "sword",
-    "swifty",
-    "wand",
-    "throwingstars",
-    "fclaw",
-    "spear",
-    "candycanesword",
-    "fsword",
-    "basher",
-    "frostbow",
-    "t2bow",
-    "rapier",
-    "pmace",
-    "cupid",
-    "snowflakes",
-    "carrotsword",
-    "fireblade",
-    "ornamentstaff",
-    "merry",
-    "bataxe",
-    "pinkie",
-    "dagger",
-    "firebow",
-    "firestaff",
-    "swordofthedead",
-    "daggerofthedead",
-    "woodensword",
-    "maceofthedead",
-    "staffofthedead",
-    "bowofthedead",
-    "harbringer",
-    "oozingterror",
-    "froststaff",
-    "firestars",
-    "crossbow",
-    "spearofthedead",
-    "harpybow",
-    "t3bow",
-    "pmaceofthedead",
-    "lmace",
-    "hammer",
-    "gstaff",
-    "hdagger",
-    "dragondagger",
-    "gbow",
-    "scythe",
-    "vsword",
-    "vdagger",
-    "vstaff",
-    "vhammer",
-    "heartwood",
-    "dartgun",
-    "wblade",
-
-// SHILDS
-    "wshield",
-    "shield",
-    "sshield",
-    "tigershield",
-    "xshield",
-    "mshield",
-
-// OFFHANDS
-    "wbook0",
-    "quiver",
-    "lantern",
-    "wbookhs",
-    "wbook1",
-    "t2quiver",
-    "exoarm",
-
-// ELIXIRS
-    "xshot",
-    "gum",
-    "cake",
-    "candypop",
-    "pumpkinspice",
-    "elixirstr0",
-    "elixirint0",
-    "eggnog",
-    "elixirvit0",
-    "elixirdex0",
-    "bunnyelixir",
-    "hotchocolate",
-    "greenbomb",
-    "swirlipop",
-    "espresso",
-    "elixirvit1",
-    "elixirstr1",
-    "elixirdex1",
-    "elixirint1",
-    "ale",
-    "wine",
-    "whiskey",
-    "elixirvit2",
-    "elixirstr2",
-    "elixirdex2",
-    "elixirint2",
-    "blue",
-    "pico",
-    "vblood",
-    "elixirpnres",
-    "elixirluck",
-    "elixirfzres",
-    "elixirfires",
-
-// POTIONS
-    "hpot0",
-    "mpot0",
-    "hpot1",
-    "mpot1",
-    "snakeoil",
-    "hpotx",
-    "mpotx",
-
-// SCROLLS
-    "scroll0",
-    "cscroll0",
-    "evasionscroll",
-    "outputscroll",
-    "strscroll",
-    "critscroll",
-    "goldscroll",
-    "lifestealscroll",
-    "forscroll",
-    "intscroll",
-    "apiercingscroll",
-    "armorscroll",
-    "resistancescroll",
-    "mpcostscroll",
-    "xpscroll",
-    "reflectionscroll",
-    "manastealscroll",
-    "frequencyscroll",
-    "rpiercingscroll",
-    "dreturnscroll",
-    "vitscroll",
-    "speedscroll",
-    "dexscroll",
-    "luckscroll",
-    "scroll1",
-    "cscroll1",
-    "offeringp",
-    "scroll2",
-    "cscroll2",
-    "offering",
-    "offeringx",
-    "scroll3",
-    "scroll4",
-    "cscroll3",
-
-// Crafting and Collecting
-    "essenceoflife",
-    "rattail",
-    "frogt",
-    "carrot",
-    "pstem",
-    "whiteegg",
-    "bfur",
-    "electronics",
-    "essenceofgreed",
-    "mbones",
-    "gslime",
-    "beewings",
-    "bandages",
-    "rfur",
-    "smush",
-    "dstones",
-    "crabclaw",
-    "bwing",
-    "spores",
-    "lspores",
-    "cscale",
-    "cocoon",
-    "spidersilk",
-    "pleather",
-    "drapes",
-    "ascale",
-    "feather0",
-    "feather1",
-    "brownegg",
-    "snakefang",
-    "tshell",
-    "bronzenugget",
-    "sstinger",
-    "essenceofnature",
-    "ink",
-    "lotusf",
-    "emptyheart",
-    "rfangs",
-    "svenom",
-    "bfang",
-    "cshell",
-    "essenceoffire",
-    "bronzeingot",
-    "essenceofether",
-    "essenceoffrost",
-    "btusk",
-    "ectoplasm",
-    "goldnugget",
-    "trinkets",
-    "ijx",
-    "bcandle",
-    "watercore",
-    "goldingot",
-    "platinumnugget",
-    "nheart",
-    "networkcard",
-    "platinumingot",
-
-// Exchangeables
-    "5bucks",
-    "gift1",
-    "seashell",
-    "gift0",
-    "leather",
-    "ornament",
-    "troll",
-    "basketofeggs",
-    "mistletoe",
-    "candycane",
-    "candy1",
-    "gem1",
-    "greenenvelope",
-    "redenvelopev2",
-    "redenvelopev3",
-    "redenvelopev4",
-    "redenvelope",
-    "gemfragment",
-    "goldenegg",
-    "armorbox",
-    "bugbountybox",
-    "candy0",
-    "gem0",
-    "weaponbox",
-    "xbox",
-    "cosmo2",
-    "cosmo0",
-    "mysterybox",
-    "cosmo3",
-
-// KEYS
-    "frozenkey",
-    "cryptkey",
-    "stonekey",
-    "tombkey",
-    "bkey",
-    "ukey",
-    "dkey",
-
-// OTHERS
-    "emptyjar",
-    "cxjar",
-    "snowball",
-    "emotionjar",
-    "coal",
-    "tracker",
-    "confetti",
-    "smoke",
-    "firecrackers",
-    "shadowstone",
-    "poison",
-    "rod",
-    "pickaxe",
-    "x2",
-    "x0",
-    "x7",
-    "x5",
-    "egg3",
-    "egg5",
-    "egg0",
-    "egg2",
-    "egg4",
-    "egg6",
-    "x3",
-    "x1",
-    "x6",
-    "x4",
-    "egg8",
-    "egg1",
-    "egg7",
-    "x8",
-    "puppyer",
-    "funtoken",
-    "monstertoken",
-    "frozenstone",
-    "pvptoken",
-    "friendtoken",
-    "stand0",
-    "stick",
-    "gem2",
-    "fieldgen0",
-    "xptome",
-    "gem3",
-    "qubics",
-    "bottleofxp",
-    "cosmo1",
-    "licence",
-    "cosmo4",
-    "supercomputer",
-    "computer",
-    "goldbooster",
-    "xpbooster",
-    "luckbooster",
-    "flute",
-]
-
 const trash_items = [
     // HELMETS
         "helmet",
@@ -654,12 +84,12 @@ const trash_items = [
         // "oxhelmet",
     
     // ARMORS
-        // "tshirt1",
+        "tshirt1",
         // "tshirt3",
         // "tshirt8",
         // "tshirt9",
-        // "tshirt2",
-        // "tshirt0",
+        "tshirt2",
+        "tshirt0",
         // "tshirt7",
         // "tshirt6",
         // "tshirt4",
@@ -786,7 +216,7 @@ const trash_items = [
         // "mearring",
     
     // AMULETS
-        // "hpamulet",
+        "hpamulet",
         // "warmscarf",
         // "dexamulet",
         // "skullamulet",
@@ -804,7 +234,7 @@ const trash_items = [
         // "northstar",
     
     // BELTS
-        // "hpbelt",
+        "hpbelt",
         // "lbelt",
         // "dexbelt",
         // "strbelt",
@@ -964,8 +394,8 @@ const trash_items = [
         // "mpotx",
     
     // SCROLLS
-        "scroll0",
-        "cscroll0",
+        // "scroll0",
+        // "cscroll0",
         // "evasionscroll",
         // "outputscroll",
         // "strscroll",
@@ -984,7 +414,7 @@ const trash_items = [
         // "frequencyscroll",
         // "rpiercingscroll",
         // "dreturnscroll",
-        // "vitscroll",
+        "vitscroll",
         // "speedscroll",
         // "dexscroll",
         // "luckscroll",
@@ -1002,23 +432,23 @@ const trash_items = [
     // Crafting and Collecting
         // "essenceoflife",
         // "rattail",
-        // "frogt",
+        "frogt",
         // "carrot",
-        // "pstem",
-        // "whiteegg",
+        "pstem",
+        "whiteegg",
         // "bfur",
         // "electronics",
         // "essenceofgreed",
         // "mbones",
-        // "gslime",
-        // "beewings",
+        "gslime",
+        "beewings",
         // "bandages",
         // "rfur",
         // "smush",
         // "dstones",
-        // "crabclaw",
+        "crabclaw",
         // "bwing",
-        // "spores",
+        "spores",
         // "lspores",
         // "cscale",
         // "cocoon",
@@ -1035,7 +465,7 @@ const trash_items = [
         // "sstinger",
         // "essenceofnature",
         // "ink",
-        // "lotusf",
+        "lotusf",
         // "emptyheart",
         // "rfangs",
         // "svenom",
@@ -1050,7 +480,7 @@ const trash_items = [
         // "goldnugget",
         // "trinkets",
         // "ijx",
-        // "bcandle",
+        "bcandle",
         // "watercore",
         // "goldingot",
         // "platinumnugget",
@@ -1106,7 +536,7 @@ const trash_items = [
         // "coal",
         // "tracker",
         // "confetti",
-        // "smoke",
+        "smoke",
         // "firecrackers",
         // "shadowstone",
         // "poison",
@@ -1155,28 +585,20 @@ const trash_items = [
         // "flute",
 ]
 
-
 /* PARTY */
 let play_char = "Chantme";
-let party = ["FunWarIAm", "FunStrike", "Shepart"];
+let party = ["FunStrike", "FunRangerOne", "FunrangerTwo"];
 let merchant_name = "Chantme";
 let party_leader = party[0];
 
-/* FIGHTER STATES */
-let hunter_toggle = false;
-let focus_target = true;
-let event_monster_toggle = false;
-let fishingToggle = true;
-
-let regular_farm_monster_type = "bat";
-let farm_monster_type = "bat";
-
-let player_state = 'idle';
+let farm_monster_type = "crab";
+let monster_index = 0;
+let focus_target = false;
 
 function start() {
     if (character.name == merchant_name) {
         for (i in party) {
-			start_character(party[i], "main");
+			start_character(party[i], "Chantme");
         }
     }
 }
@@ -1187,40 +609,6 @@ function stop() {
 			stop_character(party[i], "main");
         }
     }
-}
-
-
-//Relocate certain items to certain slots
-function relocateItems() {
-	//All Characters Special Items
-	if (locate_item("tracker") !== -1
-		&& locate_item("tracker") !== 0) swap(locate_item("tracker"), 0);
-	if (locate_item("jacko") !== -1
-		&& locate_item("jacko") !== 1) swap(locate_item("jacko"), 1);
-	//Only farmers have Hand of Midas
-	if (character.ctype !== "merchant"
-		&& locate_item("handofmidas") !== -1
-		&& locate_item("handofmidas") !== 2) swap(locate_item("handofmidas"), 2);
-	//Only Priest and Mage have a lantern
-	if ((character.ctype !== "priest"
-		|| character.ctype !== "mage")
-		&& locate_item("lantern") !== -1
-		&& locate_item("lantern") !== 3) swap(locate_item("lantern"), 3);
-	//Potions
-	if (locate_item("hpot1") !== -1
-		&& locate_item("hpot1") !== 35) swap(locate_item("hpot1"), 35);
-	if (locate_item("mpot1") !== -1
-		&& locate_item("mpot1") !== 36) swap(locate_item("mpot1"), 36);
-}
-
-function tidyInventory() {
-	for (let i = 0; i <= 34; i++) {
-		if (character.items[i] === null) {
-			for (let j = 34; j > i; j--) {
-				if (character.items[j]) swap(j, i);
-			}
-		}
-	}
 }
 
 //If a characters Health / Mana Potions are exhausted,
@@ -1261,76 +649,6 @@ function transferLoot(merchantName) {
 	}
 }
 
-
-
-//Handle Hunter Quest
-function handle_hunt_quest() {
-    let monster_type;
-    let hunted_monsters;
-    if (hunter_toggle) {
-        //Get the quest
-        if (!character.s.monsterhunt) {
-            debug("Getting new hunterQuest");
-            if(character.name !== merchant_name) player_state = 'getting quest';
-            smart_move({
-                to: "monsterhunter"
-            }, function () {
-                parent.socket.emit("monsterhunt");
-                update_farming_spot();
-            });
-            //If character has a quest, handle it
-        } else if (character.s.monsterhunt) {
-            monster_type = character.s.monsterhunt.id;
-            hunted_monsters = _get("hunted_monsters") || [];
-            //Check if quest can be pursued
-            if (character.s.monsterhunt.c > 0) {
-                let already_added;
-                hunted_monsters.forEach(element => {
-                    if (element.quest_giver === character.name) already_added = true
-                });
-                if (monsters_to_hunt.includes(monster_type) && !already_added) {
-                    hunted_monsters.unshift({
-                        monster_type: monster_type,
-                        quest_giver: character.name,
-                        timestamp: Date.now() + character.s.monsterhunt.ms
-                    });
-                    _set("hunted_monsters", hunted_monsters);
-                    debug("Setting HunterQuest in locStor");
-                }
-            }
-            //Turn in fulfilled quest
-            if (character.s.monsterhunt.c === 0) {
-                debug("Fulfilled Hunter Quest");
-                smart_move({
-                    to: "monsterhunter"
-                }, function () {
-                    //Remove fulfilled quest from localStorage
-                    hunted_monsters.forEach((element, index) => {
-                        if (element.quest_giver === character.name) {
-                            hunted_monsters.splice(index, 1);
-                        }
-                    });
-                    _set("hunted_monsters", hunted_monsters);
-                    //Turn in quest
-                    parent.socket.emit("monsterhunt");
-                    //Get new quest
-                    parent.socket.emit("monsterhunt");
-                    //Update farming spot
-                    update_farming_spot();
-                });
-            }
-            //Remove quests older than 30 minutes
-            hunted_monsters.forEach((element, index) => {
-                if (element.timestamp && Date.now() > element.timestamp) {
-                    hunted_monsters.splice(index, 1);
-                    _set("hunted_monsters", hunted_monsters);
-                    debug("Deleted old quest from LocStor");
-                }
-            });
-        }
-    }
-}
-
 function use_potions() {
     if (can_use("hp") && ((character.hp / character.max_hp <= .50) || (character.max_hp - character.hp > 200)) || 
 		character.mp / character.max_mp <= .50 || (character.max_mp - character.mp > 300)) {
@@ -1362,85 +680,6 @@ character.on("stacked", (data) => {
     }
 });
 
-function get_farming_spot(monster_type) {
-    //Find all spawns of the monster
-    let spots = [];
-    for (map in G.maps) {
-        if (!available_maps.includes(map)) continue;
-        for (monsters in G.maps[map].monsters) {
-            let monster = G.maps[map].monsters[monsters];
-            if (monster.type === monster_type) {
-                spots.push({
-                    map: map,
-                    monster: monster
-                });
-            }
-        }
-    }
-    //Find the spawn with most monsters
-    let most_monsters = 0;
-    let index_most_monsters = 0;
-    spots.forEach((farmingSpot, index) => {
-        if (farmingSpot.monster.count > most_monsters) {
-            most_monsters = farmingSpot.monster.count;
-            index_most_monsters = index;
-        }
-    });
-
-    return spots[index_most_monsters];
-}
-
-function is_in_spot(spot) {
-    x1 = spot.monster.boundary[0];
-    y1 = spot.monster.boundary[1];
-
-    x2 = spot.monster.boundary[2];
-    y2 = spot.monster.boundary[3];
-
-    return character.real_x > x1 && character.real_y > y1 && character.real_x < x2 && character.real_y < y2;
-}
-
-function move_to_spot(spot) {
-    let boundary = spot.monster.boundary;
-
-    let spot_center_x = Math.floor(boundary[0] + ((boundary[2] - boundary[0]) / 2));
-    let spot_center_y = Math.floor(boundary[1] + ((boundary[3] - boundary[1]) / 2));
-    if(character.name !== merchant_name) player_state = 'moving to spot';
-    debug("Moving to spot");
-    smart_move({
-        map: spot.map,
-        x: spot_center_x,
-        y: spot_center_y
-    }, function () {
-        if (character.name === party[1]) xsmart_move(spot_center_x + 70, spot_center_y - 30); //Old: +45 / -20
-        if (character.name === party[2]) xsmart_move(spot_center_x - 70, spot_center_y - 30); //Old: -45 / -20
-    });
-}
-
-//Update farming spot.
-//1. Check for Event-Monsters
-//2. Do Hunting-Quests
-//3. Regular farming
-function update_farming_spot() {
-    let hunted_monsters = _get("hunted_monsters");
-    //Check for rare Event-Monsters
-    if (event_monster_toggle && find_event_monster("get_monster")) {
-        farm_monster_type = find_event_monster("get_monster");
-        //Hunted Monsters can be not set, or an empty array
-        //of length 0, that"s why both must be checked
-    } else if (hunter_toggle && hunted_monsters && hunted_monsters.length > 0) {
-        farm_monster_type = hunted_monsters[hunted_monsters.length - 1].monsterType;
-    } else {
-        farm_monster_type = regular_farm_monster_type;
-    }
-    //No matter if a hunt is going on or not, update farmingSpotData
-    farming_spot = get_farming_spot(farm_monster_type);
-    //Adjust master according to monster difficulty
-    focus_target = monsters_require_focus.includes(farm_monster_type) ? true : false;
-
-    if(character.name !== merchant_name) player_state = `farm ${farm_monster_type}`;
-}
-
 function get_target() {
 
     if(target && parent.entities[target] && valid_target(parent.entities[target])) {
@@ -1450,25 +689,12 @@ function get_target() {
     }
 
     if ((!focus_target || character.name == party_leader) || (focus_target && !(get_player(party_leader)))) {
-        //Returns any monster that targets any party-member
-        for (let member of parent.party_list) {
-            target = get_nearest_monster({
-                target: member
-            });
-            if (valid_target(target)) {
-                change_target(target);
-                return target;
-            }
-        }
-
         //Looks for special monsters
         target = Object.values(parent.entities).filter(entity => special_monsters.includes(entity.mtype))[0];
         if (valid_target(target)) {
             change_target(target);
             return target;
         }
-
-
         //Returns any monster that targets nobody
         target = get_nearest_monster({
             type: farm_monster_type,
@@ -1492,7 +718,7 @@ function get_target() {
 
 function valid_target(target) {
     if (target && target !== null && !target.dead && target.visible && parent.entities[target.id] &&
-        (monsters_to_hunt.includes(target.mtype) || event_monsters.includes(target.mtype))) {
+        (monsters_to_hunt.includes(target.mtype) || special_monsters.includes(target.mtype))) {
         return true;
     } else {
         return false;
@@ -1527,8 +753,7 @@ function initParty() {
 
 //Handles all incoming CodeMessages
 function on_cm(name, data) {
-    if (get_player(name)
-        && get_player(name).owner === character.owner) {
+    if (get_player(name) && get_player(name).owner === character.owner) {
 
         //Handles all CM's
         if (data.message === "needPotions") sendPotion(name, data);
@@ -1540,65 +765,6 @@ function sendPotion(name, data) {
     if (character.ctype === "merchant") return;
     for (potion of data.potions) if (locate_item(potion) !== -1 && quantity(potion) >= 2) send_item(name, locate_item(potion), Math.floor(quantity(potion) / 2));
     log(`Got cm from ${name} requesting ${data.potions}`, "red")
-}
-
-  //Master character lays breadcrumbs
-function masterBreadcrumbs() {
-	//Master writes location to localStorage
-	if (focus_target && character.name === party_leader) {
-        _set("MasterPos", {
-            map: character.map,
-            in: character.in,
-            x: Math.floor(character.real_x),
-            y: Math.floor(character.real_y)
-	    });
-    }
-}
-
-//Follow master character
-function followMaster() {
-	const theMaster = get_player(party_leader);
-	const masterMaxDist = character.range;
-	let pos = _get("MasterPos");
-	if (focus_target && character.name !== party_leader) {
-		//If master is on screen, follow him
-		if (theMaster && Math.ceil(distance(character, theMaster)) > masterMaxDist) {
-			debug("Following Master with Get_Player");
-			xsmart_move(theMaster.x, theMaster.y);
-            if(character.name !== merchant_name) player_state = 'follow master';
-		}
-		//If the master is too far away,
-		//followers read masters location from localStorage
-		else if (!theMaster && pos) {
-			debug("Following Master from Local Storage");
-			smart_move(pos);
-            if(character.name !== merchant_name) player_state = 'follow master';
-		}
-	}
-}
-
-
-
-function _get(name)
-{
-	// persistent get function that works for serializable objects
-	try{
-		return JSON.parse(get("cstore_"+name));
-	}catch(e){
-		return null;
-	}
-}
-
-function _set(name,value)
-{
-	// persistent set function that works for serializable objects
-	try{
-		set("cstore_"+name,JSON.stringify(value));
-		return true;
-	}catch(e){
-		debug("set() call failed for: "+name+" reason: "+e,colors.code_error);
-		return false;
-	}
 }
 
 /**
@@ -1623,19 +789,19 @@ const potions = {
 	hpot0: 0,
 	hpot1: 150,
 	mpot0: 0,
-	mpot1: 90
+	mpot1: 150
 };
 //Cost 19000 @ 50 each
 //Cost 30000 @ 50/50/30/30
 
 //Selling parameters
-const sellItemLevel = 3;
-const profitMargin = 20;
+const sellItemLevel = 5;
+const profitMargin = 50;
 
 //Max level to be compounded
 const maxCompoundLevel = 5;
 //Max level to be upgraded
-const maxUpgradeLevel = 3;
+const maxUpgradeLevel = 5;
 
 let merchant_state = 'idle';
 
@@ -1703,36 +869,36 @@ function merchantSkills() {
 	//and store gold and good items in bank
 	if (new Date().getMinutes() % 10 === 0) {
 		merchant_state = "visit";
-        debug("Visit farm-party");
-		update_farming_spot();
-        smart_move("main", () => {
-            buyPotions();
-            relocateItems();
-            let boundary = farming_spot.monster.boundary;
-
-            let spot_center_x = Math.floor(boundary[0] + ((boundary[2] - boundary[0]) / 2));
-            let spot_center_y = Math.floor(boundary[1] + ((boundary[3] - boundary[1]) / 2));
-
-            let pos = {
-                map: farming_spot.map,
-                x: spot_center_x,
-                y: spot_center_y
-            };
-
-            smart_move(pos, () => {
-                transferPotions();
-                merchantsLuck();
-                setTimeout(function() {
-                    smart_move("bank", () => {
-                        depositGold();
-                        depositSelectedItems();
-						setTimeout(function() {
-							smart_move("main", () => {
-								merchant_state = "idle";
-							});
-						}, 5000);
-                    });
-                }, 5000)
+        smart_move(farm_monster_type, () => {
+            smart_move("main", () => {
+                buyPotions();
+                relocateItems();
+                let boundary = farming_spot.monster.boundary;
+    
+                let spot_center_x = Math.floor(boundary[0] + ((boundary[2] - boundary[0]) / 2));
+                let spot_center_y = Math.floor(boundary[1] + ((boundary[3] - boundary[1]) / 2));
+    
+                let pos = {
+                    map: farming_spot.map,
+                    x: spot_center_x,
+                    y: spot_center_y
+                };
+    
+                smart_move(pos, () => {
+                    transferPotions();
+                    merchantsLuck();
+                    setTimeout(function() {
+                        smart_move("bank", () => {
+                            depositGold();
+                            depositSelectedItems();
+                            setTimeout(function() {
+                                smart_move("main", () => {
+                                    merchant_state = "idle";
+                                });
+                            }, 5000);
+                        });
+                    }, 5000)
+                });
             });
         });
 	}
@@ -1805,7 +971,7 @@ function transferPotions() {
 
 //Buy Scrolls
 function buyScrolls(action) {
-	const scrolls = ["scroll1", "cscroll1"];
+	const scrolls = ["scroll0", "cscroll0", "scroll1", "cscroll1"];
 	for (const scroll of scrolls) {
 		const missingScrolls = minScrolls - quantity(scroll);
 		const affordableScrolls = Math.floor(character.gold / G.items[scroll].g);
@@ -2013,54 +1179,6 @@ function findEmptyTradeSlots() {
 	}
 }
 
-//Auto-buy items from other merchants if they are sold below their value
-//Also, auto-join Giveaways
-function buyCheapStuff() {
-	if (merchantDebugMode) debug("Buying cheap Stuff");
-	for (const i in parent.entities) {
-		const otherPlayer = parent.entities[i];
-		if (otherPlayer.player
-			&& otherPlayer.ctype === "merchant"
-			&& otherPlayer.slots
-			&& distance(character, otherPlayer) < G.skills.mluck.range) {
-
-			const tradeSlots = Object.keys(otherPlayer.slots).filter(tradeSlot => tradeSlot.includes("trade"));
-			tradeSlots.forEach(tradeSlot => {
-				const otherPlayerTradeSlot = otherPlayer.slots[tradeSlot];
-				//Must be a Trade-Slot
-				if (otherPlayerTradeSlot) {
-					if (!otherPlayerTradeSlot.b //Excludes "whishlisted" items! Trade slots can "sell" or "wishlist"!
-						&& otherPlayerTradeSlot.price < item_value(otherPlayerTradeSlot)
-						&& character.gold > otherPlayerTradeSlot.price
-						//Don't try to buy Giveaways
-						&& !otherPlayerTradeSlot.giveaway) {
-						//If it's a single item, buy it.
-						if (!otherPlayerTradeSlot.q) {
-							debug(`Bought 1 ${otherPlayerTradeSlot.name} from ${otherPlayer.name}`);
-							trade_buy(otherPlayer, tradeSlot, 1);
-							//If the item has a quantity, buy as many as possible
-						} else if (otherPlayerTradeSlot.q) {
-							//Maximum possible quantity of items that can be bought wit available gold
-							let maxBuy = Math.floor(character.gold / otherPlayerTradeSlot.price) < otherPlayerTradeSlot.q ? Math.floor(character.gold / otherPlayerTradeSlot.price) : otherPlayerTradeSlot.q;
-							trade_buy(otherPlayer, tradeSlot, maxBuy);
-							//parent.trade_buy(tradeSlot, otherPlayer.name, otherPlayerTradeSlot.rid, maxBuy);
-						}
-						//Auto-Join Giveaways
-					} else if (otherPlayerTradeSlot.giveaway
-						&& !otherPlayerTradeSlot.list.includes(character.name)) {
-						parent.socket.emit('join_giveaway', {
-							slot: tradeSlot,
-							id: otherPlayer.id,
-							rid: otherPlayerTradeSlot.rid,
-						});
-						debug("Joined giveaway!");
-					}
-				}
-			});
-		}
-	}
-}
-
 //Buff other characters with Merchants Luck!
 function merchantsLuck() {
 	if (merchantDebugMode) debug("Using Merchants Luck Skill");
@@ -2167,162 +1285,6 @@ function locateGems(arg) {
 	}
 }
 
-//Craft Items
-function craftItems(action = "default") {
-	if (merchantDebugMode) debug("Crafting Items");
-	for (const item of craft_items) {
-		if (checkCraftIngredients(item)) {
-			if (action === "check") return checkCraftIngredients(item);
-			smart_move(find_npc("craftsman"), () => {
-				auto_craft(item);
-				setTimeout(() => {
-					// if (!checkCraftIngredients(item)) openMerchantStand();
-				}, 3000);
-			});
-			return;
-		}
-	}
-	//Checks inventory if all needed ingredients are available
-	function checkCraftIngredients(item) {
-		let ingredientsComplete = [];
-		const { items: ingredients } = G.craft[item];
-		if (G.craft[item].cost <= character.gold) {
-			for (const ingredient of ingredients) {
-				if (locate_item(ingredient[1]) !== -1
-					//Check that item has no level...
-					&& (!character.items[locate_item(ingredient[1])].level
-						//... if it has a level, level must be 0 for the item to be crafted
-						|| character.items[locate_item(ingredient[1])].level === 0)) {
-					//Check if exactly 1 of this ingredient is needed
-					if (ingredient[0] === 1) {
-						ingredientsComplete.push(true);
-						//If more than 1 of this ingredient is needed, check if the inventory holds enough
-					} else if (ingredient[0] > 1
-						&& (quantity(ingredient[1]) >= ingredient[0])) {
-						//&& (character.items[locate_item(ingredient[1])].q >= ingredient[0])) {
-						ingredientsComplete.push(true);
-					}
-				}
-			}
-		}
-		return ingredients.length === ingredientsComplete.length ? true : false;
-	}
-}
-
-//Dismantle Items
-function dismantleItems(action = "default") {
-	if (merchantDebugMode) debug("Dismantling Items");
-	if (action === "check") return findDismantleItems("find");
-	if (findDismantleItems("find")) {
-		smart_move(find_npc("craftsman"), () => {
-			dismantle(findDismantleItems("slot"));
-			setTimeout(() => {
-				// if (!findDismantleItems("find")) openMerchantStand();
-			}, 3000);
-		});
-		return;
-	}
-	function findDismantleItems(arg) {
-		for (const slot in character.items) {
-			if (character.items[slot]) {
-				if (arg === "find") {
-					if (dismantle_items.indexOf(character.items[slot].name) !== -1) return true;
-				} else if (arg === "slot") {
-					if (dismantle_items.indexOf(character.items[slot].name) !== -1) return slot;
-				}
-			}
-		}
-	}
-}
-
-function goFishing(action = "default") {
-	if (fishingToggle) {
-		if (merchantDebugMode) debug("Fishing");
-
-		//Equipment to wear when not fishing
-		const mainHand = "candycanesword";
-		const offHand = "sshield";
-		const fishingSpot = {
-			map: "main",
-			x: -1368,
-			y: -34
-		}
-
-		//Check if can go fishing, equip regular Gear if not
-		if (action === "check") {
-			if (is_on_cooldown("fishing")) equipRegularGear();
-			return !is_on_cooldown("fishing");
-			//Check if character has a fishingrod. If not, craft one
-		} else if (action === "checkFishingRod") {
-			checkFishingRod();
-		}
-
-		//Check if character has a fishingrod. If not, craft one.
-		function checkFishingRod() {
-			if (locate_item("rod") === -1
-				&& character.slots.mainhand?.name !== "rod") {
-				if (character.map === "bank"
-					&& locate_item("spidersilk") === -1) {
-					retrieveFromBank("spidersilk");
-				} else if (character.map === "main"
-					&& locate_item("spidersilk") !== -1) {
-					buy("staff");
-				}
-			}
-		}
-
-		//Go fishing
-		if (!is_on_cooldown("fishing")
-			&& (locate_item("rod") !== -1
-				|| character.slots.mainhand?.name === "rod")) {
-			//Move to fishing spot
-			if (distance(character, fishingSpot) > 10) {
-				smart_move(fishingSpot, () => { equipFishingGear() });
-				//If at fishing spot, equip the fishing rod and fish
-			} else if (distance(character, fishingSpot) < 10) {
-				if (character.slots.mainhand?.name !== "rod") {
-					equipFishingGear();
-					//Start fishing!
-				} else if (character.slots.mainhand?.name === "rod"
-					&& !character.c.fishing) {
-					use_skill("fishing");
-					setTimeout(() => {
-						if (is_on_cooldown("fishing")) {
-							equipRegularGear();
-						}
-					}, 15000);
-				}
-			}
-			// ###### Still needed?? ######
-			//If fishing is on cooldown, openMerchantStand()
-		} /*else if (is_on_cooldown("fishing")) {
-		if (distance(character, fishingSpot) < 10) openMerchantStand();
-		equipRegularGear();
-	}*/
-
-		//Equip Fishingrod
-		function equipFishingGear() {
-			if (character.slots.offhand) unequip("offhand");
-			if (character.slots.mainhand?.name !== "rod"
-				&& locate_item("rod") !== -1) {
-				equip(locate_item("rod"));
-			}
-		}
-
-		//Equip regular Gear
-		function equipRegularGear() {
-			if (character.slots.mainhand?.name !== mainHand
-				&& locate_item(mainHand) !== -1) {
-				equip(locate_item(mainHand));
-			}
-			if (character.slots.offhand?.name !== offHand
-				&& locate_item(offHand) !== -1) {
-				equip(locate_item(offHand));
-			}
-		}
-	}
-}
-
 //Retrieve items from Bank
 function retrieveFromBank(item) {
 	//Loops through bank-sections
@@ -2340,22 +1302,6 @@ function retrieveFromBank(item) {
 		}
 	}
 }
-
-
-function warriorSkills(target) {
-	//How much Mana should be kept in reserve
-	const manaReserve = 0.8;
-
-	//Use Ranger Skills
-	if (character.mp > (character.max_mp * manaReserve)) {
-        if(target.target != character.name && !is_on_cooldown("taunt")) {
-            use_skill("taunt", target);
-            debug("Used taunt");
-        }
-	}
-}
-
-
 
 function rangerSkills(target) {
 
@@ -2418,82 +1364,9 @@ function rangerSkills(target) {
 	}
 }
 
-
-function priestSkills(target) {
-
-	//How much Mana should be kept in reserve
-	const manaReserve = 0.7;
-	const maxHealing = character.attack;
-	const maxPartyHealing = (() => { for (let i = G.skills.partyheal.levels.length - 1; i >= 0; i--) if (G.skills.partyheal.levels[i][0] <= character.level) return G.skills.partyheal.levels[i][1] })();
-	let hurtPartyMembers = 0;
-
-	//Healing (Party-Heal and healing individual characters)
-	for (const name of parent.party_list) {
-		const partyMember = get_player(name);
-		if (partyMember) {
-
-			//Heal COMPLETE Party
-			if (partyMember.hp < ((partyMember.max_hp - G.items.hpot1.gives[0][1]) - maxPartyHealing)
-				&& !partyMember.rip) hurtPartyMembers++;
-			if (hurtPartyMembers >= 2
-				&& character.mp >= G.skills.partyheal.mp
-				&& !is_on_cooldown("partyheal")) {
-				use_skill("partyheal");
-				debug("Healing Party");
-			}
-
-			//Heal ONE Partymember
-			if (partyMember.hp < ((partyMember.max_hp - G.items.hpot1.gives[0][1]) - maxHealing)
-				&& !partyMember.rip
-				&& character.mp >= character.mp_cost
-				//&& can_heal(partyMember)
-				&& is_in_range(partyMember, "heal")
-				&& !is_on_cooldown("heal")) {
-				heal(partyMember);
-                debug(`Healing ${partyMember.name}`);
-			}
-
-			//Absorb Sins of a Partymember
-			if (character.level >= 55
-				&& !partyMember.rip
-				&& partyMember.name !== character.name //Don"t absorb own sins
-				&& partyMember.hp < (partyMember.max_hp - (maxHealing * 2))
-				&& character.mp >= G.skills.absorb.mp
-				//&& can_heal(partyMember)
-				&& is_in_range(partyMember, "absorb")
-				&& !is_on_cooldown("absorb")) {
-				use_skill("absorb", partyMember);
-				debug(`Absorbed sins of ${partyMember.name}`);
-			}
-		}
-	}
-
-	//Use Dark Blessing
-	if (character.level >= 70
-		&& valid_offense_skill(target, manaReserve)
-		&& character.mp > (character.max_mp * manaReserve)
-		&& character.mp > G.skills.darkblessing.mp
-		&& !is_on_cooldown("darkblessing")) {
-		use_skill("darkblessing");
-		debug("Used Dark Blessing");
-	}
-
-	//Curse the enemy
-	if (valid_offense_skill(target, manaReserve)
-		&& character.mp > (character.max_mp * manaReserve)
-		&& character.mp > G.skills.curse.mp
-		&& is_in_range(target, "curse")
-		&& !is_on_cooldown("curse")) {
-		use_skill("curse");
-		debug("Cursed the enemy");
-	}
-}
-
-
-let farming_spot = get_farming_spot(farm_monster_type);
 let target = null;
 
-// start();
+start();
 
 if(character.ctype == 'merchant') {
 	setInterval(function() {
@@ -2515,48 +1388,35 @@ else {
 	
 		use_potions();
 		loot();
-	
-		if (is_moving(character)) return;
-	
-		let target = get_target();
+
+        if(is_moving(character)) return;
+
+		target = get_target();
 		if (target) {
 			// if (character.ctype === "mage") mageSkills(target);
 			if (character.ctype === "priest") priestSkills(target);
 			if (character.ctype === "ranger") rangerSkills(target, farm_monster_type);
 			if (character.ctype === "warrior") warriorSkills(target);
 			fight(target);
-		} else if (!is_in_spot(farming_spot)) {
-			move_to_spot(farming_spot);
+		} else if(!is_moving(character)) {
+			smart_move(farm_monster_type);
 		}
 	}, 1000 / 4);
 	
 	setInterval(function() {
 		if (character.rip) {
-			if(character.name !== merchant_name) player_state = 'respawning';
-			setTimeout(respawn, 15000);
-			return;
-		};
-	
-		//If the master is moving, he lays breadcrumbs
-		if (focus_target && character.name === party_leader) masterBreadcrumbs();
-	
-		if(is_moving(character)) return;
-	
-		//Party follows master [Except the merchant]
-		if (focus_target && character.name !== party_leader) followMaster();
-	
-	}, 1000);
-	
-	setInterval(function() {
-		if (character.rip) return;
-		update_farming_spot();
-		if (is_moving(character)) return;
-	
-		relocateItems();
-		setTimeout(tidyInventory, 500);
-	
+            respawn();
+            return;
+        };
 		requestPotions();
 		transferLoot(merchant_name);
-		if (hunter_toggle) handle_hunt_quest();
 	}, 5000);
 }
+
+setInterval(function() {
+    monster_index++;
+    if(monster_index >= monsters_to_hunt.length) {
+        monster_index = 0;
+    }
+    farm_monster_type = monsters_to_hunt[monster_index];
+}, 1000 * 60 * 30)

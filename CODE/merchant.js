@@ -749,7 +749,7 @@ function merchantSkills() {
 function buyPotions() {
 	if (merchantDebugMode) debug("Buying Potions");
 	//If farmMonsterType requires a master, buy more potions!	
-	const potionModifier = monsters_require_focus.includes(farm_monster_type) ? 3 : 1;
+	const potionModifier = 1;
 	for (const potion in potions) {
 		if (quantity(potion) < potions[potion]) buy_with_gold(potion, (potions[potion] - quantity(potion)) * potionModifier);
 	}

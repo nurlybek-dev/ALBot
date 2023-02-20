@@ -1405,6 +1405,10 @@ else {
 		requestPotions();
 		transferLoot(merchant_name);
 	}, 5000);
+
+    setInterval(function() {
+        if(!is_moving(character) && !target) smart_move(farm_monster_type);
+    }, 30000);
 }
 
 setInterval(function() {
@@ -1415,7 +1419,3 @@ setInterval(function() {
     farm_monster_type = monsters_to_hunt[monster_index];
     smart_move(farm_monster_type);
 }, 1000 * 60 * 30)
-
-if(character.ctype != 'merchant') {
-    smart_move(farm_monster_type);
-}

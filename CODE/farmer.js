@@ -573,7 +573,6 @@ setInterval(function () {
 }, 1000 / 4);
 
 if(character.name == party[0]) setInterval(restoreParty, 5000);
-setInterval(transferLoot, 5000);
 setInterval(doStuff, 1000*60);
 
 function staffLogic() {
@@ -708,25 +707,6 @@ function rangerSkills(target) {
 		}
 	}
     return false;
-}
-
-function transferLoot(merchantName) {
-	const merchant = get_player(merchantName);
-	if (character.ctype !== "merchant"
-		&& merchant
-		&& merchant.owner === character.owner
-		&& distance(character, merchant) < 400) {
-		//Transfer Gold
-		if (character.gold > 1000) send_gold(merchant, character.gold)
-		//Transfer Items
-		character.items.forEach((item, index) => {
-			if (item && !keepItems.includes(item.name)) {
-				send_item(merchant, index, 9999);
-			}
-		});
-		//Send spare jackos to the merchant, too [Deactivated: Jackos don't drop from monsters, only from rare candy]
-		//if (locate_item("jacko") !== -1 && locate_item("jacko") !== 40) send_item(merchant, locate_item("jacko"), 9999);
-	}
 }
 
 function on_party_invite(name) {

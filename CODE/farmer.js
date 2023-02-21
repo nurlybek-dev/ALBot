@@ -544,22 +544,6 @@ const trash_items = [
         // "flute",
 ];
 
-
-if (character.rip) {
-    setTimeout(function () {
-        respawn();
-        setTimeout(function () {
-            smart_move(targetMonster, function () {
-                fighting = true;
-            });
-        }, 1000);
-    }, 12000);
-} else {
-    smart_move(targetMonster, function () {
-        fighting = true;
-    });
-}
-
 setInterval(function () {
     if (!fighting && !doingStaff) {
         return;
@@ -573,7 +557,7 @@ setInterval(function () {
 }, 1000 / 4);
 
 if(character.name == party[0]) setInterval(restoreParty, 5000);
-setInterval(doStuff, 1000*60);
+setInterval(doStuff, 1000*60*60);
 
 function staffLogic() {
     if (character.rip && !reviving) {

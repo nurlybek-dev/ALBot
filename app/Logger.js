@@ -26,6 +26,7 @@ class Logger {
     }
 
     log(message, color) {
+        if(message.includes('gold') || message.includes('killed')) return;
         console.log(this.prefixBuilder() + message);
     }
 

@@ -52,7 +52,6 @@ class GameController {
                 game.send_cm_failed(data)
             })
             game.on("config", async (data) => {
-                console.log(data)
                 switch (data.type) {
                     case "switchServer":
                         await this.stopCharacter(characterId);

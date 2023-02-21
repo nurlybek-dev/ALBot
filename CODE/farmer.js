@@ -145,7 +145,7 @@ const trash_items = [
     
     // RINGS
         // "dexring",
-        // "ringsj",
+        "ringsj",
         // "intring",
         // "vitring",
         // "strring",
@@ -673,7 +673,7 @@ function rangerSkills(target) {
 		//Multishots (3-Shot and 5-Shot)
 		//ONLY if there is no master!
 		if (!is_on_cooldown("attack")) {
-			const targets = Object.values(parent.entities).filter(entity => entity.mtype === targetMonster && entity.level <= 1 && is_in_range(entity, "3shot") && is_in_range(entity, "5shot"));
+			const targets = Object.values(parent.entities).filter(entity => entity.mtype === targetMonster && is_in_range(entity, "3shot") && is_in_range(entity, "5shot"));
 			if (character.level >= 75
 				&& targets.length >= 5
 				&& !is_on_cooldown("5shot")

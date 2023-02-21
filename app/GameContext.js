@@ -76,7 +76,7 @@ class GameContext extends Context {
             resolve();
         }
 
-        const timeout = 10;
+        const timeout = 30;
         extensions.reload_task = setTimeout(() => {
             console.log("game not loaded after " + timeout + " seconds, reloading");
             reject();

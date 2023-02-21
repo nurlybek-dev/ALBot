@@ -642,7 +642,7 @@ function revive() {
                 fighting = true;
             });
         }, 1000)
-    }, 12000)
+    }, 12000);
 }
 
 
